@@ -1,0 +1,45 @@
+.navbar{
+    background-color: #DF3D1D;
+}
+
+.container{
+    display: flex;
+    flex-wrap:inherit;
+    margin-right: 100px;
+}
+
+.navbar-brand{
+    display: flex;
+    align-items: flex-start;
+}
+
+.logo {
+    font-family: 'Rock It';
+    font-size: 24px;
+    margin-top: 18px;
+}
+
+.navbar-nav{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.nav-item{
+    font-size: 24px;
+    padding-left: 40px;
+}
+
+.nav-link{
+    color: #000 !important;
+}
+
+.dropdown-menu{
+    background-color: #DF3D1D;
+    border: none;
+}
+
+.dropdown-item{
+    color: #000;
+}
+
