@@ -1,10 +1,10 @@
 .navbar{
     background-color: #DF3D1D;
+    width: 100%;
 }
 
 .container{
-    display: flex;
-    flex-wrap:inherit;
+    width: 100%;
     margin-right: 100px;
 }
 
@@ -42,4 +42,24 @@
 .dropdown-item{
     color: #000;
 }
+
+.login-container{
+    margin-left: 100px;
+    color: #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.login-container :hover {
+    cursor: pointer;
+}
+
+.bi-person-circle {
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+
 
