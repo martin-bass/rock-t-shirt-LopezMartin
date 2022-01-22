@@ -2,10 +2,14 @@ import React from 'react';
 //Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/dist/dropdown';
-
+//Logo
 import logo_mano from '/Users/macbookpro/Desktop/CODERHOUSE/Curso_ReactJS/T-Shirt-Rock-Store_LopezMartin/rock-t-shirt/src/img/logo_mano.png';
 
+//Estilos
 import './NavBar.css';
+
+//Components
+import CartWidget from './CartWidget';
 
 function NavBar() {
     return (
@@ -38,6 +42,7 @@ function NavBar() {
                         <a className="nav-link" href="#">CONTACT</a>
                     </li>
                 </ul>
+                <CartWidget/>
                 <div className='login-container'>
                     <h5>LogIn</h5>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">

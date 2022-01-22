@@ -1,0 +1,8 @@
+.cartWidget :hover {
+    cursor: pointer;
+}
+
+.bi-cart {
+    width: 40px;
+    height: 40px;
+}
