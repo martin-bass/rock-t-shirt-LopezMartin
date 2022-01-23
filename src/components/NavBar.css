@@ -13,6 +13,11 @@
     align-items: flex-start;
 }
 
+@font-face {
+    font-family: 'Rock It';
+    src: url('/src/fonts/Rockit.ttf');
+} 
+
 .logo {
     font-family: 'Rock It';
     font-size: 24px;
