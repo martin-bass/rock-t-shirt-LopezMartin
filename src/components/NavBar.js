@@ -1,9 +1,9 @@
 import React from 'react';
 //Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/js/dist/dropdown';
+import 'bootstrap/js/dist/dropdown.js';
 //Logo
-import logo_mano from '/Users/macbookpro/Desktop/CODERHOUSE/Curso_ReactJS/T-Shirt-Rock-Store_LopezMartin/rock-t-shirt/src/img/logo_mano.png';
+import logo_mano from '../img/logo_mano.png';
 
 //Estilos
 import './NavBar.css';
@@ -16,7 +16,7 @@ function NavBar() {
         <nav className="navbar navbar-light navbar-expand-lg">
             <div className="container">
                 <a className="navbar-brand" href="#">
-                    <img src={logo_mano} alt="" width="60" />
+                    <img src={logo_mano} alt="imagen logo" width="60" />
                     <h3 className="logo">Rock T-Shirt</h3>
                 </a>
                 <ul className="navbar-nav">
