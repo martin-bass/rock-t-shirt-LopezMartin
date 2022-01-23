@@ -11,6 +11,6 @@ function App() {
       <ItemListContainer mensaje="Sitio en desarrollo..."/>
     </div>
   );
-}
+};
 
 export default App;
