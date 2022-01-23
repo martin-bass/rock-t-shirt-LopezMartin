@@ -4,8 +4,8 @@
 }
 
 .container{
-    width: 100%;
-    margin-right: 100px;
+    display: flex;
+    width: 100% !important;
 }
 
 .navbar-brand{
@@ -44,11 +44,12 @@
 }
 
 .login-container{
+    width: auto;
     color: #000;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .login-container :hover {

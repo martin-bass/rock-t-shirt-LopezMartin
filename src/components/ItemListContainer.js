@@ -3,11 +3,11 @@ import React from 'react';
 //Estilos
 import './ItemListContainer.css'
 
-function ItemListContainer() {
+function ItemListContainer({mensaje}) {
   return (
-    <div className='ItemListContainer'>
-        Sitio en desarrollo...
-    </div>
+        <div className='ItemListContainer'>
+            {mensaje}
+        </div>
   );
 };
 
