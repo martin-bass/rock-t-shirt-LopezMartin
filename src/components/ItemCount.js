@@ -35,41 +35,41 @@ function ItemCount({stock}) {
     
     return (
         <Card className='card' sx={{ maxWidth: 345 }}>
-        <CardActionArea>
-            <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-                Producto de Ejemplo
-            </Typography>
-            <Typography variant="body1" color="text.primary">
-                Stock: {stock} unidades
-            </Typography>
-            </CardContent>
-        </CardActionArea>
-        <CardActions>
-            <div className='btn-card-container'>
-                <div className='botones-suma-resta'>
-                    <IndeterminateCheckBoxOutlinedIcon
-                        className='btn-resta'
-                        onClick={decrementarProducto}
-                    />
-                    <Typography variant="body2" color="text.secondary">
-                        {initial}
-                    </Typography>
-                    <AddBoxOutlinedIcon 
-                        className='btn-suma'
-                        onClick={aumentarProducto}
-                    />
+            <CardActionArea>
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                    Producto de Ejemplo
+                </Typography>
+                <Typography variant="body1" color="text.primary">
+                    Stock: {stock} unidades
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <div className='btn-card-container'>
+                    <div className='botones-suma-resta'>
+                        <IndeterminateCheckBoxOutlinedIcon
+                            className='btn-resta'
+                            onClick={decrementarProducto}
+                        />
+                        <Typography variant="body2" color="text.secondary">
+                            {initial}
+                        </Typography>
+                        <AddBoxOutlinedIcon 
+                            className='btn-suma'
+                            onClick={aumentarProducto}
+                        />
+                    </div>
+                    <Button 
+                        onClick={onAdd}
+                        className='btn-agregar'
+                        variant="contained" 
+                        size="small" 
+                        color="primary">
+                            Agregar al Carrito
+                    </Button>
                 </div>
-                <Button 
-                    onClick={onAdd}
-                    className='btn-agregar'
-                    variant="contained" 
-                    size="small" 
-                    color="primary">
-                        Agregar al Carrito
-                </Button>
-            </div>
-        </CardActions>
+            </CardActions>
         </Card>
   );
 };
