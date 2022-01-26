@@ -41,9 +41,6 @@ export default function ItemCount({stock}) {
             <Typography variant="body1" color="text.primary">
                 Stock: {stock} unidades
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-                Cantidad: {initial}
-            </Typography>
             </CardContent>
         </CardActionArea>
         <CardActions>
@@ -52,6 +49,9 @@ export default function ItemCount({stock}) {
                     <IndeterminateCheckBoxOutlinedIcon
                         className='btn-resta'
                         onClick={decrementarProducto}/>
+                    <Typography variant="body2" color="text.secondary">
+                        {initial}
+                    </Typography>
                     <AddBoxOutlinedIcon 
                         className='btn-suma'
                         onClick={aumentarProducto}/>
