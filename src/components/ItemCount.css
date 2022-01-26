@@ -1,0 +1,21 @@
+.btn-suma :hover{   
+    cursor: pointer;
+}
+
+.btn-resta :hover {
+    cursor: pointer;
+}
+
+.btn-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botones-suma-resta {
+    margin-left: 40px !important;
+}
+
+.btn-agregar{
+    margin-left: 35px !important;
+}

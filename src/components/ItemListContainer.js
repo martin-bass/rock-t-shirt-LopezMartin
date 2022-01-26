@@ -3,10 +3,14 @@ import React from 'react';
 //Estilos
 import './ItemListContainer.css'
 
-function ItemListContainer({mensaje}) {
+//Components
+import MultiActionAreaCard from './ItemCount'
+import ItemCount from './ItemCount';
+
+function ItemListContainer() {
   return (
         <div className='ItemListContainer'>
-            {mensaje}
+            <ItemCount stock="18" />
         </div>
   );
 };
