@@ -13,10 +13,9 @@ import './ItemCount.css';
 
 function ItemCount({stock}) {
     const [initial, setStock] = useState (1);
-    const stockProducto = parseInt (stock);
 
     const aumentarProducto = () => {
-        if (initial < stockProducto) {
+        if (initial < stock) {
             setStock (initial +1)
         };
     };

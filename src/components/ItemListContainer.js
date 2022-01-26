@@ -9,7 +9,7 @@ import ItemCount from './ItemCount';
 function ItemListContainer() {
   return (
         <div className='ItemListContainer'>
-            <ItemCount stock="18" />
+            <ItemCount stock={18} />
         </div>
   );
 };
