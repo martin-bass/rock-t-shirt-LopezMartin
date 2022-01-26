@@ -4,7 +4,6 @@ import React from 'react';
 import './ItemListContainer.css'
 
 //Components
-import MultiActionAreaCard from './ItemCount'
 import ItemCount from './ItemCount';
 
 function ItemListContainer() {

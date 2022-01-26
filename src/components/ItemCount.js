@@ -11,24 +11,26 @@ import IndeterminateCheckBoxOutlinedIcon from '@mui/icons-material/Indeterminate
 //Estilos
 import './ItemCount.css';
 
-export default function ItemCount({stock}) {
-    const [initial, onAdd] = useState (1);
+function ItemCount({stock}) {
+    const [initial, setStock] = useState (1);
     const stockProducto = parseInt (stock);
 
     const aumentarProducto = () => {
         if (initial < stockProducto) {
-            onAdd (initial +1)
+            setStock (initial +1)
         };
     };
 
     const decrementarProducto= () => {
         if (initial > 1) {
-            onAdd (initial -1);
+            setStock (initial -1);
         };
     };
 
-    const finalizarCompra = () => {
-        alert (`Cantidad agregada: ${initial} unidades!`)
+    const onAdd = () => {
+        if (stock != 0){
+            alert (`Cantidad agregada: ${initial} unidades!`)
+        };        
     };
     
     return (
@@ -48,16 +50,18 @@ export default function ItemCount({stock}) {
                 <div className='botones-suma-resta'>
                     <IndeterminateCheckBoxOutlinedIcon
                         className='btn-resta'
-                        onClick={decrementarProducto}/>
+                        onClick={decrementarProducto}
+                    />
                     <Typography variant="body2" color="text.secondary">
                         {initial}
                     </Typography>
                     <AddBoxOutlinedIcon 
                         className='btn-suma'
-                        onClick={aumentarProducto}/>
+                        onClick={aumentarProducto}
+                    />
                 </div>
                 <Button 
-                    onClick={finalizarCompra}
+                    onClick={onAdd}
                     className='btn-agregar'
                     variant="contained" 
                     size="small" 
@@ -69,3 +73,5 @@ export default function ItemCount({stock}) {
         </Card>
   );
 };
+
+export default ItemCount;
