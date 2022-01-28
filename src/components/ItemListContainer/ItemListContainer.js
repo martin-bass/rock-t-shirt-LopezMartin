@@ -4,7 +4,7 @@ import React from 'react';
 import './ItemListContainer.css'
 
 //Components
-import ItemCount from './ItemCount';
+import ItemCount from '../../components/ItemCount/ItemCount';
 
 function ItemListContainer() {
   return (

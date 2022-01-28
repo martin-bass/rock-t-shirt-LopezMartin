@@ -3,13 +3,13 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/dist/dropdown.js';
 //Logo
-import logo_mano from '../img/logo_mano.png';
+import logo_mano from '../../img/logo_mano.png';
 
 //Estilos
 import './NavBar.css';
 
 //Components
-import CartWidget from './CartWidget';
+import CartWidget from '../../components/CartWidget/CartWidget';
 
 function NavBar() {
     return (

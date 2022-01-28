@@ -12,17 +12,17 @@ import IndeterminateCheckBoxOutlinedIcon from '@mui/icons-material/Indeterminate
 import './ItemCount.css';
 
 function ItemCount({stock}) {
-    const [initial, setStock] = useState (1);
+    const [initial, setInitial] = useState (1);
 
     const aumentarProducto = () => {
         if (initial < stock) {
-            setStock (initial +1)
+            setInitial (initial +1)
         };
     };
 
     const decrementarProducto= () => {
         if (initial > 1) {
-            setStock (initial -1);
+            setInitial (initial -1);
         };
     };
 
