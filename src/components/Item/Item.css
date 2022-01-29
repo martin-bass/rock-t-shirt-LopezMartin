@@ -1,0 +1,29 @@
+.card{
+    margin: 10px;
+}
+
+.CardMedia {
+    width: auto !important;
+    height: 300px;
+    margin: 15px auto;
+}
+
+.CardContent {
+    height: 170px;
+}
+
+.CardContent > p{
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+
+.btn-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-agregar {
+    margin-bottom: 10px;
+}

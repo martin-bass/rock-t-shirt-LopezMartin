@@ -1,16 +1,5 @@
-@font-face {
-    font-family: 'Rock It';
-    src: url('/src/fonts/Rockit.ttf');
-} 
-
 .ItemListContainer{
-    display: flex;
     background-color: #E7EBF0;
     width: 100%;
-    height: 300px;
-    color: #fff;
-    font-family: 'Rock It' ;
-    font-size: 24px;
-    align-items: center;
-    justify-content: center;
+    height: auto;
 }
