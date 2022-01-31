@@ -7,15 +7,14 @@ import Item from '../Item/Item';
 import './ItemList.css'
 
 function ItemList() {
-    const [products, setProdcuts] = useState ([]);
+    const [products, setProducts] = useState ([]);
 
     useEffect (() => {
         fetch('https://fakestoreapi.com/products')
             .then(response => response.json())
-            .then(products => setProdcuts(products))
+            .then(products => setProducts(products))
     },[]);
 
-    console.log (products)
   return (
     <div className='ItemList'>
         {
