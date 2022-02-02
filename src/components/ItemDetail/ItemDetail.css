@@ -1,0 +1,28 @@
+.card{
+    height: auto;
+}
+
+.CardMedia {
+    width: 200px !important;
+    margin: auto;
+}
+
+.descripcion {
+    font-size: 12px !important;
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
+}
+
+.descripcion > p {
+    font-weight: bold !important;
+}
+
+.precio {
+    font-weight: bold !important;
+    font-size: 22px !important;
+
+}
+
+.btn-comprar {
+    margin: auto !important;
+}
