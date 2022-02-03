@@ -17,8 +17,8 @@ function ItemDetailContainer() {
   },[]);
 
   return (
-    <div>
-      <ItemDetail />
+    <div className='ItemDetailContainer'>
+      <ItemDetail key={objeto.id} producto={objeto}/>
     </div>
   );
 }

@@ -9,25 +9,25 @@ import { Button, CardActionArea, CardActions, CardMedia } from '@mui/material';
 //Estilos
 import './ItemDetail.css'
 
-function ItemDetail({}) {
+function ItemDetail({producto}) {
   return (
     <Card className='card' sx={{ maxWidth: 345 }}>
         <CardActionArea>
             <CardMedia
                 className='CardMedia'
                 component="img"
-                //image= {producto.image}
+                image= {producto.image}
                 alt="Paella dish"
             />
             <CardContent className='CardContent'>
                 <Typography className='titulo' gutterBottom variant="h5" component="div">
-                    jojo
+                    {producto.title}
                 </Typography>
                 <Typography className='descripcion' gutterBottom variant="h6" component="div">
-                    <p>Descripción del Producto:</p>
+                    <p>Descripción del Producto:</p>{producto.description}
                 </Typography>
                 <Typography className='precio' variant="body1" color="text.primary">
-                    Precio: $ koko
+                    Precio: ${producto.price}
                 </Typography>
             </CardContent>
         </CardActionArea>
