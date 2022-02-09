@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 //Components
-import Item from '../Item/Item';
+import Item from '../../Item/Item/Item';
 
 //Estilos
 import './ItemList.css'
