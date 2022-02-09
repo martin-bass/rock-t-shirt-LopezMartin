@@ -10,19 +10,18 @@ import CardMedia from '@mui/material/CardMedia';
 //Estilos
 import './Item.css';
 
-
 function Item({producto}) {
     
     return (
-        <Card className='card' sx={{ maxWidth: 345 }}>
+        <Card className='card-item' sx={{ maxWidth: 345 }}>
             <CardActionArea>
                 <CardMedia
-                    className='CardMedia'
+                    className='CardMedia-item'
                     component="img"
                     image={producto.image}
                     alt="Paella dish"
                 />
-                <CardContent className='CardContent'>
+                <CardContent className='CardContent-item'>
                     <Typography gutterBottom variant="h6" component="div">
                         {producto.title}
                     </Typography>
@@ -31,9 +30,9 @@ function Item({producto}) {
                     </Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions className='btn-card-container'>
+            <CardActions className='btn-card-container-item'>
                     <Button 
-                        className='btn-agregar'
+                        className='btn-agregar-item'
                         variant="contained" 
                         size="small" 
                         color="primary">

@@ -4,41 +4,38 @@ import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions, CardMedia } from '@mui/material';
+import { CardActionArea, CardActions, CardMedia } from '@mui/material';
+
+//Components
+import ItemCount from '../ItemCount/ItemCount';
 
 //Estilos
 import './ItemDetail.css'
 
 function ItemDetail({producto}) {
   return (
-    <Card className='card' sx={{ maxWidth: 345 }}>
+    <Card className='card-detail' sx={{ maxWidth: 345 }}>
         <CardActionArea>
             <CardMedia
-                className='CardMedia'
+                className='CardMedia-detail'
                 component="img"
                 image= {producto.image}
                 alt="Paella dish"
             />
-            <CardContent className='CardContent'>
+            <CardContent className='CardContent-detail'>
                 <Typography className='titulo' gutterBottom variant="h5" component="div">
                     {producto.title}
                 </Typography>
-                <Typography className='descripcion' gutterBottom variant="h6" component="div">
+                <Typography className='descripcion-detail' gutterBottom variant="h6" component="div">
                     <p>Descripción del Producto:</p>{producto.description}
                 </Typography>
-                <Typography className='precio' variant="body1" color="text.primary">
+                <Typography className='precio-detail' variant="body1" color="text.primary">
                     Precio: ${producto.price}
                 </Typography>
             </CardContent>
         </CardActionArea>
-        <CardActions className='btn-card-container'>
-                <Button
-                    className='btn-comprar'
-                    variant="contained" 
-                    size="small" 
-                    color="primary">
-                        Comprar
-                </Button>
+        <CardActions className='btn-card-container-detail'>
+            <ItemCount stock={5} className='ItemCount-deatail'/>      
         </CardActions>
     </Card>
   );

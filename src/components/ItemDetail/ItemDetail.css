@@ -1,27 +1,29 @@
-.card{
-    height: auto;
+.card-detail{
+    height: auto !important;
 }
 
-.CardMedia {
-    width: 200px !important;
+.CardMedia-detail {
+    width: 100% !important;
+    height: auto;
     margin: auto;
 }
 
-.descripcion {
+.descripcion-detail {
     font-size: 12px !important;
     margin-top: 40px !important;
     margin-bottom: 20px !important;
 }
 
-.descripcion > p {
+.descripcion-detail > p {
     font-weight: bold !important;
 }
 
-.precio {
+.precio-detail {
     font-weight: bold !important;
     font-size: 22px !important;
 }
 
-.btn-comprar {
-    margin: auto !important;
+.btn-card-container-detail{
+    display: flex;
+    justify-content: center;
 }

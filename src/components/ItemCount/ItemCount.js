@@ -2,9 +2,8 @@ import React,  {useState} from 'react';
 
 // MUI material
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Button,CardActions } from '@mui/material';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import IndeterminateCheckBoxOutlinedIcon from '@mui/icons-material/IndeterminateCheckBoxOutlined';
 
@@ -33,19 +32,9 @@ function ItemCount({stock}) {
     };
     
     return (
-        <Card className='card' sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    Producto de Ejemplo
-                </Typography>
-                <Typography variant="body1" color="text.primary">
-                    Stock: {stock} unidades
-                </Typography>
-                </CardContent>
-            </CardActionArea>
+        <Card className='card-count' sx={{ maxWidth: 345 }}>
             <CardActions>
-                <div className='btn-card-container'>
+                <div className='btn-card-container-count'>
                     <div className='botones-suma-resta'>
                         <IndeterminateCheckBoxOutlinedIcon
                             className='btn-resta'
@@ -61,7 +50,7 @@ function ItemCount({stock}) {
                     </div>
                     <Button 
                         onClick={onAdd}
-                        className='btn-agregar'
+                        className='btn-agregar-count'
                         variant="contained" 
                         size="small" 
                         color="primary">

@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 //Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/dist/dropdown.js';
+
 //Logo
 import logo_mano from '../../img/logo_mano.png';
 
@@ -10,25 +13,32 @@ import './NavBar.css';
 
 //Components
 import CartWidget from '../../components/CartWidget/CartWidget';
+import ItemList from '../../views/Category/ItemList/ItemList';
 
 function NavBar() {
     return (
         <nav className="navbar navbar-light navbar-expand-lg">
             <div className="container">
-                <a className="navbar-brand" href="#">
+                <Link className="navbar-brand" to='/' style={{ textDecoration: 'none' }}>
                     <img src={logo_mano} alt="imagen logo" width="60" />
                     <h3 className="logo">Rock T-Shirt</h3>
-                </a>
+                </Link>
                 <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">SUMMER SALE</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">MEN</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">WOMEN</a>
-                    </li>
+                    <Link className="nav-link" to='/category/0' style={{ textDecoration: 'none' }}>
+                        <li className="nav-item">
+                            ELECTRONICS
+                        </li>
+                    </Link>
+                    <Link className="nav-link" to='/category/2' style={{ textDecoration: 'none' }}>
+                        <li className="nav-item">
+                            MEN
+                        </li>
+                    </Link>
+                    <Link className="nav-link" to='/category/3' style={{ textDecoration: 'none' }}>
+                        <li className="nav-item">
+                            WOMEN
+                        </li>
+                    </Link>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">ARTIST</a>
                         <ul className="dropdown-menu">
@@ -38,9 +48,11 @@ function NavBar() {
                             <li><a className="dropdown-item" href="#">Foo Fighters</a></li>
                         </ul>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">CONTACT</a>
-                    </li>
+                    <Link className="nav-link" to='/category/1' style={{ textDecoration: 'none' }}>
+                        <li className="nav-item">
+                            JEWELERY
+                        </li>
+                    </Link>
                 </ul>
                 <CartWidget/>
                 <div className='login-container'>
