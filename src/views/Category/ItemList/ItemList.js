@@ -1,26 +1,30 @@
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
+//Axios
+import axios from 'axios';
 
 //Components
-import Item from '../../Item/Item/Item';
+import Item from '../../../components/Item/Item';
 
 //Estilos
 import './ItemList.css'
 
 function ItemList() {
-    const [products, setProducts] = useState ([]);
+  const [products, setProducts] = useState ([]);
 
-    useEffect (() => {
-        fetch('https://fakestoreapi.com/products')
-            .then(response => response.json())
-            .then(products => setProducts(products))
-    },[]);
+  useEffect (()=> {
+    axios ('https://fakestoreapi.com/products')
+    .then((response) => {setProducts(response.data)})
+  },[]);
 
   return (
     <div className='ItemList'>
         {
           products.map ((product) => {
             return (
-              <Item key={product.id} producto={product}/>
+              <Link to={`item/${product.id}`} key={product.id}>
+                <Item producto={product}/>
+              </Link>
             );
           })
         }   

@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
+
 //Components
-import ItemDetail from '../ItemDetail/ItemDetail';
+import ItemDetail from '../../../components/ItemDetail/ItemDetail';
 
 //Estilos
 import './ItemDetailContainer.css';
@@ -9,16 +11,19 @@ import './ItemDetailContainer.css';
 import axios from 'axios';
 
 function ItemDetailContainer() {
-  const [objeto, SetObjeto] = useState ({});
+  const [item, SetItem] = useState ({});
+  let itemID= useParams();
 
+  
+  
   useEffect (()=> {
-    axios ('https://fakestoreapi.com/products/1')
-    .then((response) => {SetObjeto(response.data)})
-  },[]);
+    axios (`https://fakestoreapi.com/products/${itemID.id}`)
+    .then((response) => {SetItem(response.data)})
+  },[itemID]);
 
   return (
     <div className='ItemDetailContainer'>
-      <ItemDetail key={objeto.id} producto={objeto}/>
+      <ItemDetail key={itemID.id} producto={item}/>
     </div>
   );
 }
