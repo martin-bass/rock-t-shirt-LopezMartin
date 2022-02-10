@@ -19,7 +19,7 @@ function ItemListContainer() {
   },[]);
 
   return (
-    <div className='ItemList'>
+    <div className='ItemListContainer'>
         {
           products.map ((product) => {
             return (

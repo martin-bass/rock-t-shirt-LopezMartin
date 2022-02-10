@@ -1,6 +1,9 @@
 .ItemList {
     background-color: #E7EBF0;
-    display: grid ;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
     gap: 10px;
+    margin-top: 80px;
 }

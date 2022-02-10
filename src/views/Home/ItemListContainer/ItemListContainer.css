@@ -1,5 +1,7 @@
 .ItemListContainer{
     background-color: #E7EBF0;
-    width: 100%;
-    height: auto;
+    display: grid ;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 80px;
 }
