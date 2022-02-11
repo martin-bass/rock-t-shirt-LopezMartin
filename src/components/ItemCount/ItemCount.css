@@ -12,6 +12,10 @@
     align-items: center;
 }
 
+.stock-count > h6 {
+    font-size: 10px;
+}
+
 .botones-suma-resta {
     width: 100%;
     display: flex;

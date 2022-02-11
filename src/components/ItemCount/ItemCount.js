@@ -27,14 +27,18 @@ function ItemCount({stock}) {
 
     const onAdd = () => {
         if (stock != 0){
-            alert (`Cantidad agregada: ${initial} unidades!`)
+            setInitial(initial);
         };        
     };
+
     
     return (
-        <Card className='card-count' sx={{ maxWidth: 345 }}>
+        <Card>
             <CardActions>
                 <div className='btn-card-container-count'>
+                    <div className='stock-count'>
+                        <h6>Stock Disponible:{stock}</h6>
+                    </div>
                     <div className='botones-suma-resta'>
                         <IndeterminateCheckBoxOutlinedIcon
                             className='btn-resta'
