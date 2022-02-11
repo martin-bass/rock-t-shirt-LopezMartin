@@ -14,12 +14,28 @@ import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
 
 function ItemDetail({producto}) {
-    const [compra, setCompra] = useState (0);
 
-    const cantidadComprada = (e) => {
-        console.log (e.target.parentNode.parentNode.children);
+    const stock= 9;
+    const [initial, setInitial] = useState (1);
+
+    const aumentarProducto = () => {
+        if (initial < stock) {
+            setInitial (initial +1)
+        };
     };
 
+    const decrementarProducto= () => {
+        if (initial > 1) {
+            setInitial (initial -1);
+        };
+    };
+
+    const onAdd = () => {
+        if (stock != 0){
+            setInitial(initial);
+            console.log(initial);
+        };        
+    };
 
     return (
         <Card className='card-detail'>
@@ -46,11 +62,18 @@ function ItemDetail({producto}) {
                     </CardContent>
                 </CardActionArea>
                 <CardActions className='btn-card-container-detail'>
-                    <ItemCount stock={5} className='ItemCount-deatail'/>      
+                    <ItemCount 
+                        className='ItemCount-deatail'
+                        stock={stock} 
+                        initial= {initial}
+                        aumentarProducto={aumentarProducto}
+                        decrementarProducto={decrementarProducto}
+                        onAdd={onAdd}
+
+                    />   
                 </CardActions>
                 <Link to='/cart' style={{ textDecoration: 'none' }}>
                     <Button 
-                        onClick={cantidadComprada}
                         className='btn-finalizar-seleccion'
                         variant="contained" 
                         size="large" 
