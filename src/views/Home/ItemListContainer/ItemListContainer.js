@@ -12,15 +12,16 @@ import './ItemListContainer.css'
 
 function ItemListContainer() {
   const [products, setProducts] = useState ([]);
-
+  console.log(products);
   useEffect (()=> {
     axios ('https://fakestoreapi.com/products')
     .then((response) => {setProducts(response.data)})
   },[]);
-
+  console.log(products);
   return (
     <div className='ItemListContainer'>
         {
+          
           products.map ((product) => {
             return (
               <Link to={`item/${product.id}`} key={product.id} style={{ textDecoration: 'none' }}>
@@ -28,6 +29,7 @@ function ItemListContainer() {
               </Link>
             );
           })
+
         }   
     </div>
   );

@@ -1,6 +1,19 @@
 .card-detail{
-    height: auto !important;
+    display: flex;
+    flex-direction: row;
+    width: 800px;
 }
+
+.card-img-detail{
+    width: 300px;
+    margin: 5px;
+}
+
+.card-info-detail{
+    width: 500px;
+    margin: 5px;
+}
+
 
 .CardMedia-detail {
     width: 100% !important;

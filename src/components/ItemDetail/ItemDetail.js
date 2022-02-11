@@ -14,29 +14,33 @@ import './ItemDetail.css'
 
 function ItemDetail({producto}) {
   return (
-    <Card className='card-detail' sx={{ maxWidth: 345 }}>
-        <CardActionArea>
+    <Card className='card-detail'>
+        <div className='card-img-detail'>
             <CardMedia
-                className='CardMedia-detail'
-                component="img"
-                image= {producto.image}
-                alt="Paella dish"
-            />
-            <CardContent className='CardContent-detail'>
-                <Typography className='titulo' gutterBottom variant="h5" component="div">
-                    {producto.title}
-                </Typography>
-                <Typography className='descripcion-detail' gutterBottom variant="h6" component="div">
-                    <p>Descripción del Producto:</p>{producto.description}
-                </Typography>
-                <Typography className='precio-detail' variant="body1" color="text.primary">
-                    Precio: ${producto.price}
-                </Typography>
-            </CardContent>
-        </CardActionArea>
-        <CardActions className='btn-card-container-detail'>
-            <ItemCount stock={5} className='ItemCount-deatail'/>      
-        </CardActions>
+                    className='CardMedia-detail'
+                    component="img"
+                    image= {producto.image}
+                    alt="Paella dish"
+                />
+        </div>
+        <div className='card-info-detail'>
+            <CardActionArea>
+                <CardContent className='CardContent-detail'>
+                    <Typography className='titulo' gutterBottom variant="h5" component="div">
+                        {producto.title}
+                    </Typography>
+                    <Typography className='descripcion-detail' gutterBottom variant="h6" component="div">
+                        <p>Descripción del Producto:</p>{producto.description}
+                    </Typography>
+                    <Typography className='precio-detail' variant="body1" color="text.primary">
+                        Precio: ${producto.price}
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions className='btn-card-container-detail'>
+                <ItemCount stock={5} className='ItemCount-deatail'/>      
+            </CardActions>
+        </div>
     </Card>
   );
 };
