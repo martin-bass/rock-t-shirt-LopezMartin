@@ -1,8 +1,13 @@
 import React from 'react'
 
+//Estilos
+import './cart.css'
+
 function Cart() {
   return (
-    <div>Cart</div>
+    <div className='cart'>
+      Cart
+    </div>
   )
 }
 

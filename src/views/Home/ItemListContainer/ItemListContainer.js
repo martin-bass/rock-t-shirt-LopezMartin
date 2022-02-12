@@ -6,30 +6,33 @@ import axios from 'axios';
 
 //Components
 import Item from '../../../components/Item/Item';
+import Spinner from '../../../components/Spinner/Spinner';
 
 //Estilos
 import './ItemListContainer.css'
 
 function ItemListContainer() {
   const [products, setProducts] = useState ([]);
-  console.log(products);
+  const [isLoading, setIsloading] = useState (true);
+
   useEffect (()=> {
     axios ('https://fakestoreapi.com/products')
-    .then((response) => {setProducts(response.data)})
+    .then((response) => {setProducts(response.data)});
+    setTimeout (()=>{setIsloading(false)},1000);
   },[]);
-  console.log(products);
+  
   return (
     <div className='ItemListContainer'>
         {
-          
-          products.map ((product) => {
-            return (
-              <Link to={`item/${product.id}`} key={product.id} style={{ textDecoration: 'none' }}>
-                <Item producto={product}/>
-              </Link>
-            );
-          })
-
+          isLoading ? (<Spinner />) : (
+            products.map ((product) => {
+              return (
+                <Link to={`item/${product.id}`} key={product.id} style={{ textDecoration: 'none' }}>
+                  <Item producto={product}/>
+                </Link>
+              );
+            })
+          )
         }   
     </div>
   );

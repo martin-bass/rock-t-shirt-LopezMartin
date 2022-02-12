@@ -69,7 +69,6 @@ function ItemDetail({producto}) {
                         aumentarProducto={aumentarProducto}
                         decrementarProducto={decrementarProducto}
                         onAdd={onAdd}
-
                     />   
                 </CardActions>
                 <Link to='/cart' style={{ textDecoration: 'none' }}>

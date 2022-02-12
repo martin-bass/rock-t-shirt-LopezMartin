@@ -9,6 +9,7 @@ import ItemListContainer from '../src/views/Home/ItemListContainer/ItemListConta
 import ItemList from '../src/views/Category/ItemList/ItemList';
 import ItemDetailContainer from '../src/views/Item/ItemDetailContainer/ItemDetailContainer';
 import Cart from './views/Cart/cart';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/item/:id' element={<ItemDetailContainer />}></Route>
           <Route path='/cart' element={<Cart />}></Route>
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
