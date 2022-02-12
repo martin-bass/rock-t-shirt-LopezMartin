@@ -1,10 +1,9 @@
-//import './App.css';
-
 //React-Router-DOM
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Components
 import NavBar from './components/NavBar/NavBar';
+import Carrousel from './components/Carrousel/Carrousel';
 import ItemListContainer from '../src/views/Home/ItemListContainer/ItemListContainer';
 import ItemList from '../src/views/Category/ItemList/ItemList';
 import ItemDetailContainer from '../src/views/Item/ItemDetailContainer/ItemDetailContainer';
@@ -16,6 +15,7 @@ function App() {
     <Router>
       <div className="App">
         <NavBar/>
+        {/* <Carrousel /> */}
         <Routes>
           <Route path='/' element={<ItemListContainer />}></Route>
           <Route path='/category/:category' element={<ItemList />}></Route>
