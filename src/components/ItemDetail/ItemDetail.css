@@ -50,12 +50,12 @@
 }
 
 .btn-finalizar-seleccion {
-    background-color: #DF3D1D;
-    margin-right: 15px;
+    background-color: #DF3D1D !important;
+    margin-right: 15px !important;
 }
 
 .btn-finalizar-seleccion:hover {
-    background-color: #ac2f16;
+    background-color: #ac2f16 !important;
 }
 
 

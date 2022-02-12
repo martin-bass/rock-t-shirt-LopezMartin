@@ -19,6 +19,7 @@ function ItemDetail({producto}) {
 
     const stock= 9;
     const [initial, setInitial] = useState (1);
+    const [compraRealizada, setCompraRealizada] = useState (false);
 
     const aumentarProducto = () => {
         if (initial < stock) {
@@ -36,6 +37,8 @@ function ItemDetail({producto}) {
         if (stock != 0){
             setInitial(initial);
             console.log(initial);
+            setCompraRealizada (true);
+            alert (`Cantidad seleccionada ${initial} unidades!`)
         };        
     };
 
@@ -64,14 +67,18 @@ function ItemDetail({producto}) {
                     </CardContent>
                 </CardActionArea>
                 <CardActions className='btn-card-container-detail'>
-                    <ItemCount 
+                {
+                    compraRealizada ? (null) : (
+                        <ItemCount 
                         className='ItemCount-deatail'
                         stock={stock} 
                         initial= {initial}
                         aumentarProducto={aumentarProducto}
                         decrementarProducto={decrementarProducto}
                         onAdd={onAdd}
-                    />   
+                    />
+                    )
+                }
                 </CardActions>
                 <div className='btn-finalizar'>
                     <Link to='/' style={{ textDecoration: 'none' }}>
