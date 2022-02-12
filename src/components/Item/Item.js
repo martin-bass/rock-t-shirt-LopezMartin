@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import CardMedia from '@mui/material/CardMedia';
 
+
 //Estilos
 import './Item.css';
 
@@ -36,7 +37,7 @@ function Item({producto}) {
                         variant="contained" 
                         size="small" 
                         color="primary">
-                            Agregar al Carrito
+                            Ver detalle del producto
                     </Button>
             </CardActions>
         </Card>

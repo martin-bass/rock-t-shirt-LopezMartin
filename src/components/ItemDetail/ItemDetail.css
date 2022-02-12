@@ -41,6 +41,22 @@
     justify-content: center;
 }
 
-.btn-finalizar-seleccion{
-    margin-top: 20px !important;
+.btn-finalizar {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+.btn-finalizar-seleccion {
+    background-color: #DF3D1D;
+    margin-right: 15px;
+}
+
+.btn-finalizar-seleccion:hover {
+    background-color: #ac2f16;
+}
+
+
+

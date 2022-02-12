@@ -6,6 +6,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions, CardMedia, Button } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 //Components
 import ItemCount from '../ItemCount/ItemCount';
@@ -71,15 +73,27 @@ function ItemDetail({producto}) {
                         onAdd={onAdd}
                     />   
                 </CardActions>
-                <Link to='/cart' style={{ textDecoration: 'none' }}>
-                    <Button 
-                        className='btn-finalizar-seleccion'
-                        variant="contained" 
-                        size="large" 
-                        color="success">
-                            Finalizar compra
-                    </Button>
-                </Link>
+                <div className='btn-finalizar'>
+                    <Link to='/' style={{ textDecoration: 'none' }}>
+                        <Button 
+                            className='btn-finalizar-seleccion'
+                            variant="contained" 
+                            size="large">
+                                Seguir comprando
+                            <ArrowBackIcon style={{ marginLeft: '10px' }}/>
+                        </Button>
+                    </Link>
+                    <Link to='/cart' style={{ textDecoration: 'none' }}>
+                        <Button 
+                            className='btn-finalizar-compra'
+                            variant="contained" 
+                            size="large" 
+                            color="success">
+                                Finalizar compra
+                            <ShoppingCartIcon style={{ marginLeft: '10px' }}/>
+                        </Button>
+                    </Link>
+                </div>
             </div>
         </Card>
     );

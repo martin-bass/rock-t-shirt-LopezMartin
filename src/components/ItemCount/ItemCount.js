@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { Button,CardActions } from '@mui/material';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import IndeterminateCheckBoxOutlinedIcon from '@mui/icons-material/IndeterminateCheckBoxOutlined';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 //Estilos
 import './ItemCount.css';
@@ -60,6 +61,7 @@ function ItemCount({stock, initial, aumentarProducto, decrementarProducto, onAdd
                         size="small" 
                         color="primary">
                             Agregar al Carrito
+                        <ShoppingCartIcon style={{ marginLeft: '10px' }}/>
                     </Button>
                 </div>
             </CardActions>
