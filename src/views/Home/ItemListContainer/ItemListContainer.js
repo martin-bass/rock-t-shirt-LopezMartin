@@ -1,5 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { Link } from 'react-router-dom';
+
+//Context
+import { ProductosSeleccionados } from '../../../Context/CartContext/CartContext';
 
 //Axios
 import axios from 'axios';
@@ -13,12 +16,15 @@ import Carrousel from '../../../components/Carrousel/Carrousel';
 import './ItemListContainer.css'
 
 function ItemListContainer() {
-  const [products, setProducts] = useState ([]);
-  const [isLoading, setIsloading] = useState (true);
+  // const [products, setProducts] = useState ([]);
+  // const [isLoading, setIsloading] = useState (true);
+  
+  const {products, cargarProductosTotales, isLoading, setIsloading} = useContext (ProductosSeleccionados);
 
   useEffect (()=> {
-    axios ('https://fakestoreapi.com/products')
-    .then((response) => {setProducts(response.data)});
+    // axios ('https://fakestoreapi.com/products')
+    // .then((response) => {setProducts(response.data)});
+    cargarProductosTotales();
     setTimeout (()=>{setIsloading(false)},1000);
   },[]);
   

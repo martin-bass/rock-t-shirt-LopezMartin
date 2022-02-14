@@ -1,5 +1,5 @@
 import React, {useEffect, useContext} from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 // MUI material
 import Card from '@mui/material/Card';
