@@ -1,13 +1,23 @@
 .carrousel{
+    display:flex;
     position: relative;
     margin-bottom: 24px;
     width: 100%;
-    height: 500px;
-    overflow: hidden;
+    height: 710px;
+    overflow-y: hidden;
+}
+
+.c1 {
+    position: relative;
+    bottom: 150px;
 }
 
 .c2 {
-    height: auto !important;
-    
+    position: relative;
+    bottom: 200px;
+}
+
+.c3 {
+    position: relative;
 }
 

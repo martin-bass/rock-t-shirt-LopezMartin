@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/dist/carousel';
 
 //Imagenes
-import carrousel1 from '../../img/carrousel/carrousel1.jpg';
+import carrousel1 from '../../img/carrousel/carrousel1.jpeg';
 import carrousel2 from '../../img/carrousel/carrousel2.jpeg';
 import carrousel3 from '../../img/carrousel/carrousel3.jpeg';
 

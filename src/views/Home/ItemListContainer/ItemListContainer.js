@@ -7,6 +7,7 @@ import axios from 'axios';
 //Components
 import Item from '../../../components/Item/Item';
 import Spinner from '../../../components/Spinner/Spinner';
+import Carrousel from '../../../components/Carrousel/Carrousel';
 
 //Estilos
 import './ItemListContainer.css'
@@ -22,7 +23,9 @@ function ItemListContainer() {
   },[]);
   
   return (
-    <div className='ItemListContainer'>
+    <div className='ItemListContainer-wrap'>
+      <Carrousel />
+      <div className='ItemListContainer'>
         {
           isLoading ? (<Spinner />) : (
             products.map ((product) => {
@@ -34,6 +37,7 @@ function ItemListContainer() {
             })
           )
         }   
+      </div>
     </div>
   );
 };

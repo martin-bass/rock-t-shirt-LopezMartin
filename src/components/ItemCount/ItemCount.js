@@ -13,27 +13,6 @@ import './ItemCount.css';
 
 function ItemCount({stock, initial, aumentarProducto, decrementarProducto, onAdd}) {
     
-    // const [initial, setInitial] = useState (1);
-
-    // const aumentarProducto = () => {
-    //     if (initial < stock) {
-    //         setInitial (initial +1)
-    //     };
-    // };
-
-    // const decrementarProducto= () => {
-    //     if (initial > 1) {
-    //         setInitial (initial -1);
-    //     };
-    // };
-
-    // const onAdd = () => {
-    //     if (stock != 0){
-    //         setInitial(initial);
-    //     };        
-    // };
-
-    
     return (
         <Card>
             <CardActions>
