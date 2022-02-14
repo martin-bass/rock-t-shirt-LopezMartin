@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useContext} from 'react';
 import { Link } from 'react-router-dom'
 
 // MUI material
@@ -12,35 +12,20 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 //Components
 import ItemCount from '../ItemCount/ItemCount';
 
+//Context
+import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
+
 //Estilos
 import './ItemDetail.css'
 
 function ItemDetail({producto}) {
 
-    const stock= 9;
-    const [initial, setInitial] = useState (1);
-    const [compraRealizada, setCompraRealizada] = useState (false);
+    const {compraRealizada, setCompraRealizada, setInitial} = useContext (ProductosSeleccionados);
 
-    const aumentarProducto = () => {
-        if (initial < stock) {
-            setInitial (initial +1)
-        };
-    };
-
-    const decrementarProducto= () => {
-        if (initial > 1) {
-            setInitial (initial -1);
-        };
-    };
-
-    const onAdd = () => {
-        if (stock != 0){
-            setInitial(initial);
-            console.log(initial);
-            setCompraRealizada (true);
-            alert (`Cantidad seleccionada ${initial} unidades!`)
-        };        
-    };
+    useEffect(() => {
+        setInitial (1);
+        setCompraRealizada(true);
+    }, []) 
 
     return (
         <Card className='card-detail'>
@@ -68,21 +53,13 @@ function ItemDetail({producto}) {
                 </CardActionArea>
                 <CardActions className='btn-card-container-detail'>
                 {
-                    compraRealizada ? (null) : (
-                        <ItemCount 
-                        className='ItemCount-deatail'
-                        stock={stock} 
-                        initial= {initial}
-                        aumentarProducto={aumentarProducto}
-                        decrementarProducto={decrementarProducto}
-                        onAdd={onAdd}
-                    />
-                    )
+                    compraRealizada ? (<ItemCount />) : (null)
                 }
                 </CardActions>
                 <div className='btn-finalizar'>
                     <Link to='/' style={{ textDecoration: 'none' }}>
                         <Button 
+                            onClick={()=>{setCompraRealizada(!compraRealizada)}}
                             className='btn-finalizar-seleccion'
                             variant="contained" 
                             size="large">
@@ -92,6 +69,7 @@ function ItemDetail({producto}) {
                     </Link>
                     <Link to='/cart' style={{ textDecoration: 'none' }}>
                         <Button 
+                            onClick={()=>{setCompraRealizada(!compraRealizada)}}
                             className='btn-finalizar-compra'
                             variant="contained" 
                             size="large" 

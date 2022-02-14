@@ -8,21 +8,24 @@ import ItemList from '../src/views/Category/ItemList/ItemList';
 import ItemDetailContainer from '../src/views/Item/ItemDetailContainer/ItemDetailContainer';
 import Cart from './views/Cart/cart';
 import Footer from './components/Footer/Footer';
+import { ProdSeleccionadosProvider } from './Context/CartContext/CartContext';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <NavBar/> 
-        <Routes>
-          <Route path='/' element={<ItemListContainer />}></Route>
-          <Route path='/category/:category' element={<ItemList />}></Route>
-          <Route path='/item/:id' element={<ItemDetailContainer />}></Route>
-          <Route path='/cart' element={<Cart />}></Route>
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <ProdSeleccionadosProvider>
+      <Router>
+        <div className="App">
+          <NavBar/> 
+          <Routes>
+            <Route path='/' element={<ItemListContainer />}></Route>
+            <Route path='/category/:category' element={<ItemList />}></Route>
+            <Route path='/item/:id' element={<ItemDetailContainer />}></Route>
+            <Route path='/cart' element={<Cart />}></Route>
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </ProdSeleccionadosProvider>  
   );
 };
 

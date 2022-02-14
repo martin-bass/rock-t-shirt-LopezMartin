@@ -1,4 +1,4 @@
-import React,  {useState} from 'react';
+import React,  {useState, useContext} from 'react';
 
 // MUI material
 import Card from '@mui/material/Card';
@@ -8,11 +8,17 @@ import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import IndeterminateCheckBoxOutlinedIcon from '@mui/icons-material/IndeterminateCheckBoxOutlined';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
+//Context
+import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
+
 //Estilos
 import './ItemCount.css';
 
-function ItemCount({stock, initial, aumentarProducto, decrementarProducto, onAdd}) {
+function ItemCount({}) {
     
+    const {stock, initial, aumentarProducto , decrementarProducto, onAdd} = useContext (ProductosSeleccionados);
+    
+
     return (
         <Card>
             <CardActions>
