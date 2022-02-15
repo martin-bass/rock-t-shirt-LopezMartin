@@ -40,7 +40,7 @@ function ItemDetail({producto}) {
                     index.cantidad= index.cantidad + initial;
                 };
             });
-            alert ("Atencion! El producto, ya esta agregado. Sin embargo, sumaremos la cantidad sugerida al mismo item del carrito de compras");
+            alert ("Atencion! Este producto ya está agregado. Sin embargo, sumaremos la cantidad sugerida al mismo item del carrito de compras");
         } else {
         prodsDelCarrito.push({
             id:producto.id, 

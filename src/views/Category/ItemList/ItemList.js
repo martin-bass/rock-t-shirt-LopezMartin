@@ -1,12 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import { Link, useParams } from 'react-router-dom';
-
-//Axios
-import axios from 'axios';
-
-//Components
-import Item from '../../../components/Item/Item';
-
+import React from 'react';
 
 //Estilos
 import './ItemList.css'
