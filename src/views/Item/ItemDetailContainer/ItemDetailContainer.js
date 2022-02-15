@@ -1,8 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { useParams } from 'react-router-dom';
 
-//Context
-import { ProductosSeleccionados } from '../../../Context/CartContext/CartContext';
 
 //Components
 import ItemDetail from '../../../components/ItemDetail/ItemDetail';
@@ -16,22 +14,16 @@ import './ItemDetailContainer.css';
 import axios from 'axios';
 
 function ItemDetailContainer() {
-  // const [item, SetItem] = useState ({});
-  // let itemID= useParams();
-
-  // const [isLoading, setIsloading] = useState (true);
-
-  const {item, itemID, cargarProducto, isLoading1, setIsloading1, products} = useContext (ProductosSeleccionados);
+  const [item, SetItem] = useState ({});
+  let itemID= useParams();
   
-  console.log(products)
-  console.log(item);
+  const [isLoading1, setIsloading1] = useState (true);
 
   useEffect (()=> {
-    //axios (`https://fakestoreapi.com/products/${itemID.id}`)
-    //.then((response) => {SetItem(response.data)});
-    cargarProducto();
+    axios (`https://fakestoreapi.com/products/${itemID.id}`)
+    .then((response) => {SetItem(response.data)});
     setTimeout (()=>{setIsloading1(false);},1000);
-  },[]);
+  },[itemID]);
 
   return (
     <div className='ItemDetailContainer'>

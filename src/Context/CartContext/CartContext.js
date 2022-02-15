@@ -1,5 +1,4 @@
 import React, {createContext, useState} from "react";
-import { useParams } from 'react-router-dom';
 
 //Axios
 import axios from 'axios';
@@ -42,25 +41,17 @@ import axios from 'axios';
     };
 
     //-------------------------------Lógica Card Detail---------------------------------------
-    const [item, SetItem] = useState ({});
-    let itemID= useParams();
     
-    
-  
-    const [isLoading1, setIsloading1] = useState (true);
 
-    const cargarProducto = () => {
-        axios(`https://fakestoreapi.com/products/${item.id}`)
-        .then((response) => {SetItem(response.data)})
-    };
-
-
-     // -------------------------------Lógica Cart---------------------------------------
+    // -------------------------------Lógica Cart--------------------------------------------
+        //Esta es la variable que actua como carrito de compras. Aqui se guardan nuestros productos
     const [prodsDelCarrito, setProdsDelCarrito] = useState ([]);
 
-
+    // -------------------------------------------------------------------------------------
     return (
         <ProductosSeleccionados.Provider value={{ 
+            prodsDelCarrito,
+            setProdsDelCarrito,
             products,
             isLoading,
             setIsloading,
@@ -72,12 +63,7 @@ import axios from 'axios';
             decrementarProducto,
             onAdd,
             compraRealizada,
-            setCompraRealizada,
-            item,
-            itemID,
-            cargarProducto,
-            isLoading1,
-            setIsloading1
+            setCompraRealizada
             }}>
             {children}
         </ProductosSeleccionados.Provider>

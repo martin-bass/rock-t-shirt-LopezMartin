@@ -1,8 +1,16 @@
-.cart{
+.CartList-container {
     background-color: #E7EBF0;
     width: 100%;
-    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 50px;
+}
+
+.CartList {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items:flex-start ;
+    padding-bottom: 20px !important;
+    height: auto;
+    margin: 50px
 }

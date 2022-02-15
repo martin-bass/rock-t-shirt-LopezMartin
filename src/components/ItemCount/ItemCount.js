@@ -1,4 +1,4 @@
-import React,  {useState, useContext} from 'react';
+import React,  {useContext} from 'react';
 
 // MUI material
 import Card from '@mui/material/Card';
@@ -14,9 +14,9 @@ import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 //Estilos
 import './ItemCount.css';
 
-function ItemCount({}) {
+function ItemCount() {
     
-    const {stock, initial, aumentarProducto , decrementarProducto, onAdd} = useContext (ProductosSeleccionados);
+    const {stock, initial, aumentarProducto , decrementarProducto, onAdd } = useContext (ProductosSeleccionados);
     
 
     return (
@@ -40,7 +40,9 @@ function ItemCount({}) {
                         />
                     </div>
                     <Button 
-                        onClick={onAdd}
+                        onClick={
+                            onAdd
+                        }
                         className='btn-agregar-count'
                         variant="contained" 
                         size="small" 

@@ -19,13 +19,39 @@ import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 import './ItemDetail.css'
 
 function ItemDetail({producto}) {
-
-    const {compraRealizada, setCompraRealizada, setInitial} = useContext (ProductosSeleccionados);
+    const {compraRealizada, setCompraRealizada, initial, setInitial, prodsDelCarrito, setProdsDelCarrito} = useContext (ProductosSeleccionados);
 
     useEffect(() => {
         setInitial (1);
         setCompraRealizada(true);
     }, []) 
+    
+    console.log(compraRealizada);
+
+    const agregarProducto = (prodID) => {
+        //Buscamos el prodcuto en el array para ver si hay diplicados
+        const buscarProducto = prodsDelCarrito.find((prod) => {
+            return prod.id === prodID});
+        
+        //Momentaneamente, si hay duplicado, se avisa mediante alert y se suma la nueva cantidad. De lo contrario, se agrega como un producto nuevo.
+        if (buscarProducto) {
+            prodsDelCarrito.map ((index) => {
+                if (index.id===prodID) {
+                    index.cantidad= index.cantidad + initial;
+                };
+            });
+            alert ("Atencion! El producto, ya esta agregado. Sin embargo, sumaremos la cantidad sugerida al mismo item del carrito de compras");
+        } else {
+        prodsDelCarrito.push({
+            id:producto.id, 
+            articulo: producto.title,
+            foto: producto.image, 
+            precio: producto.price, 
+            cantidad: initial});
+
+        setProdsDelCarrito(prodsDelCarrito);
+        };
+    };
 
     return (
         <Card className='card-detail'>
@@ -56,29 +82,40 @@ function ItemDetail({producto}) {
                     compraRealizada ? (<ItemCount />) : (null)
                 }
                 </CardActions>
-                <div className='btn-finalizar'>
-                    <Link to='/' style={{ textDecoration: 'none' }}>
-                        <Button 
-                            onClick={()=>{setCompraRealizada(!compraRealizada)}}
-                            className='btn-finalizar-seleccion'
-                            variant="contained" 
-                            size="large">
-                                Seguir comprando
-                            <ArrowBackIcon style={{ marginLeft: '10px' }}/>
-                        </Button>
-                    </Link>
-                    <Link to='/cart' style={{ textDecoration: 'none' }}>
-                        <Button 
-                            onClick={()=>{setCompraRealizada(!compraRealizada)}}
-                            className='btn-finalizar-compra'
-                            variant="contained" 
-                            size="large" 
-                            color="success">
-                                Finalizar compra
-                            <ShoppingCartIcon style={{ marginLeft: '10px' }}/>
-                        </Button>
-                    </Link>
-                </div>
+                {
+                    compraRealizada ? (null) : (
+
+                        <div className='btn-finalizar'>
+                            <Link to='/' style={{ textDecoration: 'none' }}>
+                                <Button 
+                                    onClick={()=>{
+                                        setCompraRealizada(!compraRealizada);
+                                        agregarProducto(producto.id)
+                                    }}
+                                    className='btn-finalizar-seleccion'
+                                    variant="contained" 
+                                    size="large">
+                                        Seguir comprando
+                                    <ArrowBackIcon style={{ marginLeft: '10px' }}/>
+                                </Button>
+                            </Link>
+                            <Link to='/cart' style={{ textDecoration: 'none' }}>
+                                <Button 
+                                    onClick={()=>{
+                                        setCompraRealizada(!compraRealizada);
+                                        agregarProducto(producto.id)
+                                    }}
+                                    className='btn-finalizar-compra'
+                                    variant="contained" 
+                                    size="large" 
+                                    color="success">
+                                        Finalizar compra
+                                    <ShoppingCartIcon style={{ marginLeft: '10px' }}/>
+                                </Button>
+                            </Link>
+                        </div>
+                    )
+                }     
             </div>
         </Card>
     );

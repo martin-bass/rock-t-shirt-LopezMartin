@@ -1,0 +1,36 @@
+.CartItem {
+    width: 500px;
+    height: auto !important;
+    margin: 10px !important;
+}
+
+.CartItem-content{
+    height: 100%;
+}
+
+.CartItem-area {
+    display: flex !important;
+    flex-direction: row;
+}
+
+.CartItem-img {
+    width: 150px !important;
+}
+
+.CartItem-img > img {
+    width: 90px !important;
+}
+
+.cantidad-cart-item > h6,
+.precio-cart-item > h6 {
+    font-weight: bolder !important;
+}
+
+.precio-cart-item{
+    margin-top: 10px !important;
+}
+
+.titulo-cart-item {
+    font-weight: bolder !important;
+}
+
