@@ -45,7 +45,9 @@ function ItemDetail({producto}) {
             articulo: producto.title,
             foto: producto.image, 
             precio: producto.price, 
-            cantidad: initial});
+            cantidad: initial,
+            agregado:true
+        });
 
         setProdsDelCarrito(prodsDelCarrito);
         setCartEmpty(false);

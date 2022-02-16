@@ -40,7 +40,7 @@ import axios from 'axios';
         .then((response) => {setProducts(response.data)})
     };
 
-    //-------------------------------Lógica Cart Widget---------------------------------------
+    //---------------------------Lógica eliminar card---------------------------------------
     
 
     // -------------------------------Lógica Cart--------------------------------------------
@@ -66,7 +66,7 @@ import axios from 'axios';
             decrementarProducto,
             onAdd,
             compraRealizada,
-            setCompraRealizada
+            setCompraRealizada,
             }}>
             {children}
         </ProductosSeleccionados.Provider>
