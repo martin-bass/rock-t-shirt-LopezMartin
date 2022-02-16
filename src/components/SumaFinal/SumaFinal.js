@@ -15,7 +15,7 @@ import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 import './SumaFinal.css'
 
 function SumaFinal() {
-    const {prodsDelCarrito, setCartEmpty} = useContext (ProductosSeleccionados);
+    const {prodsDelCarrito, setCartEmpty,setProdsDelCarrito} = useContext (ProductosSeleccionados);
 
     const totalDeProdcutos = () => {
         return prodsDelCarrito.reduce ((acc, value)=> acc + value.cantidad, 0)
@@ -27,6 +27,7 @@ function SumaFinal() {
 
     const finalizarCompra = () => {
         alert("Muchas gracias por su compra!");
+        setProdsDelCarrito([]);
         setCartEmpty(true);
     };
 
@@ -48,10 +49,14 @@ function SumaFinal() {
                     Acepto sin reservas las condiciones generales                    
                     </Typography>
                 </CardContent>
-                <CardActions>
+                <CardActions className='btn-finalizar-compra-container'>
                     <Link to='/' style={{ textDecoration: 'none' }}>
-                        <Button 
-                        size="small"
+                        <Button
+                        className='btn-finalizar-compra'
+                        variant="contained" 
+                        size="large" 
+                        color="success" 
+                        size="large"
                         onClick={()=>{finalizarCompra()}}
                         >
                             Finalizar Compra

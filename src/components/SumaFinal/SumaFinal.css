@@ -3,3 +3,9 @@
     margin-top: 50px !important;
     margin-right: 100px;
 }
+
+.btn-finalizar-compra-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

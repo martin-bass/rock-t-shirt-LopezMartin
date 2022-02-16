@@ -14,20 +14,20 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 //Estilos
 import './CartItem.css';
 
-
 function CartItem({prodComprado}) {
 
-    const {prodsDelCarrito,setProdsDelCarrito} = useContext (ProductosSeleccionados);
+    const {prodsDelCarrito,setProdsDelCarrito, setCartEmpty} = useContext (ProductosSeleccionados);
 
     const eliminarCard = (IDaEliminar) =>{
         const actualizarProdsComprados = prodsDelCarrito.filter (item => 
             item.id!==IDaEliminar);
 
         setProdsDelCarrito(actualizarProdsComprados);
-
         
+        if(actualizarProdsComprados.length==0){
+            setCartEmpty(true);
+        };    
     };
-
 
     return (
         <div className='CartItem'>
