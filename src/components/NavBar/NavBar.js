@@ -54,7 +54,7 @@ function NavBar() {
                         </li>
                     </Link>
                 </ul>
-                <Link to='/cart'>
+                <Link to='/cart' style={{ textDecoration: 'none' }}>
                     <CartWidget/>
                 </Link>
                 <div className='login-container'>

@@ -25,8 +25,6 @@ function ItemDetail({producto}) {
         setInitial (1);
         setCompraRealizada(true);
     }, []) 
-    
-    console.log(compraRealizada);
 
     const agregarProducto = (prodID) => {
         //Buscamos el prodcuto en el array para ver si hay diplicados

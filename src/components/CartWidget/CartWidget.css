@@ -3,6 +3,8 @@
 }
 
 .cartWidget {
+    display: flex;
+    flex-direction: row;
     margin-left: 20px;
 }
 
@@ -11,3 +13,4 @@
     width: 40px;
     height: 40px;
 }
+
