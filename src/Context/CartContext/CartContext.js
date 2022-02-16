@@ -46,12 +46,15 @@ import axios from 'axios';
     // -------------------------------Lógica Cart--------------------------------------------
         //Esta es la variable que actua como carrito de compras. Aqui se guardan nuestros productos
     const [prodsDelCarrito, setProdsDelCarrito] = useState ([]);
+    const [cartEmpty, setCartEmpty] = useState (true); 
 
     // -------------------------------------------------------------------------------------
     return (
         <ProductosSeleccionados.Provider value={{ 
             prodsDelCarrito,
             setProdsDelCarrito,
+            cartEmpty,
+            setCartEmpty,
             products,
             isLoading,
             setIsloading,

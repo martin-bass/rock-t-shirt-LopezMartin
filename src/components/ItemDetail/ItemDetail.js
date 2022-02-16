@@ -19,7 +19,7 @@ import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 import './ItemDetail.css'
 
 function ItemDetail({producto}) {
-    const {compraRealizada, setCompraRealizada, initial, setInitial, prodsDelCarrito, setProdsDelCarrito} = useContext (ProductosSeleccionados);
+    const {compraRealizada, setCompraRealizada, initial, setInitial, prodsDelCarrito, setProdsDelCarrito, setCartEmpty} = useContext (ProductosSeleccionados);
 
     useEffect(() => {
         setInitial (1);
@@ -50,6 +50,7 @@ function ItemDetail({producto}) {
             cantidad: initial});
 
         setProdsDelCarrito(prodsDelCarrito);
+        setCartEmpty(false);
         };
     };
 

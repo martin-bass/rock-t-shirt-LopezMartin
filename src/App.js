@@ -6,7 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from '../src/views/Home/ItemListContainer/ItemListContainer';
 import ItemList from '../src/views/Category/ItemList/ItemList';
 import ItemDetailContainer from '../src/views/Item/ItemDetailContainer/ItemDetailContainer';
-import Cart from './views/Cart/cart';
+import Cart from './views/Cart/cart/cart';
 import Footer from './components/Footer/Footer';
 import { ProdSeleccionadosProvider } from './Context/CartContext/CartContext';
 

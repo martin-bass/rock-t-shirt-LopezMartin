@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/dist/dropdown.js';
 
 //Logo
-import logo_mano from '../../img/logo_mano.png';
+import logo_mano from '../../img/Logo/logo_mano.png';
 
 //Estilos
 import './NavBar.css';
