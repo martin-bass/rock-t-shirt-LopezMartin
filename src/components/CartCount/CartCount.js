@@ -9,16 +9,25 @@ import './CartCount.css';
 
 function CartCount() {
 
-    const {prodsDelCarrito} = useContext (ProductosSeleccionados);
+    const {prodsDelCarrito,cartEmpty} = useContext (ProductosSeleccionados);
 
     const totalDeProdcutos = () => {
         return prodsDelCarrito.reduce ((acc, value)=> acc + value.cantidad, 0)
     };
 
     return (
-        <div className='CartCount'>
-            <span>{totalDeProdcutos()}</span>
-        </div>
+        <>
+            {
+              cartEmpty  ? (null)
+              :
+              (
+                <div className='CartCount'>
+                    <span>{totalDeProdcutos()}</span>
+                </div>
+              )
+            }
+        </>
+        
     )
 }
 

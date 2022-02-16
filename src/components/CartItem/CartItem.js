@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useEffect, useContext} from 'react';
 
 //Context
 import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
@@ -14,22 +14,20 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 //Estilos
 import './CartItem.css';
 
+
 function CartItem({prodComprado}) {
 
-    const {prodsDelCarrito,setProdsDelCarrito,setCartEmpty} = useContext (ProductosSeleccionados);
+    const {prodsDelCarrito,setProdsDelCarrito} = useContext (ProductosSeleccionados);
 
     const eliminarCard = (IDaEliminar) =>{
         const actualizarProdsComprados = prodsDelCarrito.filter (item => 
             item.id!==IDaEliminar);
 
         setProdsDelCarrito(actualizarProdsComprados);
+
+        
     };
 
-    const chequearCarritoVacio = () =>{
-        if (prodsDelCarrito.length==0){
-            setCartEmpty(true);
-        }
-    };
 
     return (
         <div className='CartItem'>
@@ -53,10 +51,8 @@ function CartItem({prodComprado}) {
                            </Typography>
                        </CardContent>
                        <HighlightOffIcon 
-                           id={`btn-eliminar-${prodComprado.id}`}
                            onClick={()=>{
-                               eliminarCard(prodComprado.id);
-                               chequearCarritoVacio()
+                               eliminarCard(prodComprado.id)
                            }}
                            className='HighlightOffIcon'
                        />

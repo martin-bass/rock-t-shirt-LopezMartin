@@ -80,7 +80,21 @@ function ItemDetail({producto}) {
                 </CardActionArea>
                 <CardActions className='btn-card-container-detail'>
                 {
-                    compraRealizada ? (<ItemCount />) : (null)
+                    compraRealizada ? (
+                    <div className='btn-counts-container'>
+                        <ItemCount />
+                        <Link to='/' style={{ textDecoration: 'none' }}>
+                                <Button 
+                                    className='btn-finalizar-volver'
+                                    variant="contained" 
+                                    size="small">
+                                        Volver al menú
+                                    <ArrowBackIcon style={{ marginLeft: '10px' }}/>
+                                </Button>
+                            </Link>
+                    </div>    
+                    
+                    ) : (null)
                 }
                 </CardActions>
                 {
