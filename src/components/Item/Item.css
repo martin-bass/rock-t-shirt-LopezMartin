@@ -1,23 +1,26 @@
 .card-item{
     margin: 10px;
-    height: 600px !important;
+    height: 500px !important;
+}
+
+.card-item:hover {
+    box-shadow: 2px 2px 5px #333;
 }
 
 .CardMedia-item {
     width: 100%;
     height: 320px;
-    margin: 15px auto;
+    margin: auto;
 }
 
 .CardContent-item {
-    height: 170px;
+    height: 100px;
 }
 
 .CardContent-item > p{
     font-size: 16px;
     font-weight: bolder;
 }
-
 
 .btn-card-container-item {
     display: flex;
@@ -26,5 +29,10 @@
 }
 
 .btn-agregar-item {
-    margin-bottom: 10px;
+    background-color: #000 !important;
+    margin-top: 15px !important;
+}
+
+.btn-agregar-item:hover {
+    background-color: #DF3D1D !important;
 }

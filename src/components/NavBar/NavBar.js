@@ -26,7 +26,7 @@ function NavBar() {
                 <ul className="navbar-nav">
                     <Link className="nav-link" to='/category/0' style={{ textDecoration: 'none' }}>
                         <li className="nav-item">
-                            ELECTRONICS
+                            PRODUCTOS
                         </li>
                     </Link>
                     <Link className="nav-link" to='/category/2' style={{ textDecoration: 'none' }}>
@@ -50,7 +50,7 @@ function NavBar() {
                     </li>
                     <Link className="nav-link" to='/category/1' style={{ textDecoration: 'none' }}>
                         <li className="nav-item">
-                            JEWELERY
+                            STORES
                         </li>
                     </Link>
                 </ul>

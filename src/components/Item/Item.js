@@ -37,7 +37,7 @@ function Item({producto}) {
                         variant="contained" 
                         size="small" 
                         color="primary">
-                            Ver detalle del producto
+                            Ver detalle 
                     </Button>
             </CardActions>
         </Card>
