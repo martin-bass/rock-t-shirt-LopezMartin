@@ -50,7 +50,7 @@ function SumaFinal() {
                     </Typography>
                 </CardContent>
                 <CardActions className='btn-finalizar-compra-container'>
-                    <Link to='/' style={{ textDecoration: 'none' }}>
+                    <Link to='/items' style={{ textDecoration: 'none' }}>
                         <Button
                         className='btn-finalizar-compra'
                         variant="contained" 

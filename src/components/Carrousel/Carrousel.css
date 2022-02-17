@@ -1,7 +1,6 @@
 .carrousel{
     display:flex;
     position: relative;
-    margin-bottom: 24px;
     width: 100%;
     height: 710px;
     overflow-y: hidden;

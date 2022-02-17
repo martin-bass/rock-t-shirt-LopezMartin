@@ -24,7 +24,7 @@ function NavBar() {
                     <h3 className="logo">Rock T-Shirt</h3>
                 </Link>
                 <ul className="navbar-nav">
-                    <Link className="nav-link" to='/category/0' style={{ textDecoration: 'none' }}>
+                    <Link className="nav-link" to='/items' style={{ textDecoration: 'none' }}>
                         <li className="nav-item">
                             PRODUCTOS
                         </li>

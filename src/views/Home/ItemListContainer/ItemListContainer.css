@@ -1,12 +1,7 @@
-.ItemListContainer-wrap{
-    display: flex;
-    flex-direction: column;
-}
-
 .ItemListContainer{
     background-color: #E7EBF0;
     display: grid ;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    margin-top: -24px;
+    margin-top: 87px;
 }

@@ -39,7 +39,6 @@ export const ProdSeleccionadosProvider = ({children}) => {
     const [products, setProducts] = useState ([]);
     const [isLoading, setIsloading] = useState (true);
 
-
     const cargarProductosTotales = async () => {
         const q = query (collection(db, "remeras"));
         const docs = [];

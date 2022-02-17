@@ -17,7 +17,7 @@ function CartEmpty() {
     <div className='CartEmpty'>
         <h2>Tu Carrito está vacío</h2>
         <img src={emptyCart} alt="emptyCart" className='img-emptyCart' />
-        <Link to='/' style={{ textDecoration: 'none' }}>
+        <Link to='/items' style={{ textDecoration: 'none' }}>
             <Button 
                 className='btn-volverAlMenu'
                 variant="contained" 

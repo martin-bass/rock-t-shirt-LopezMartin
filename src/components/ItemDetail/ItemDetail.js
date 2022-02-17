@@ -60,7 +60,7 @@ function ItemDetail({producto}) {
                 <CardMedia
                         className='CardMedia-detail'
                         component="img"
-                        image= {producto.image}
+                        image= {producto.img}
                         alt="Paella dish"
                     />
             </div>
@@ -68,13 +68,13 @@ function ItemDetail({producto}) {
                 <CardActionArea>
                     <CardContent className='CardContent-detail'>
                         <Typography className='titulo' gutterBottom variant="h5" component="div">
-                            {producto.title}
+                            {producto.articulo}
                         </Typography>
                         <Typography className='descripcion-detail' gutterBottom variant="h6" component="div">
-                            <p>Descripción del Producto:</p>{producto.description}
+                            <p>Descripción del Producto:</p>{producto.articulo}
                         </Typography>
                         <Typography className='precio-detail' variant="body1" color="text.primary">
-                            Precio: ${producto.price}
+                            Precio: ${producto.precio}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
@@ -83,7 +83,7 @@ function ItemDetail({producto}) {
                     compraRealizada ? (
                     <div className='btn-counts-container'>
                         <ItemCount />
-                        <Link to='/' style={{ textDecoration: 'none' }}>
+                        <Link to='/items' style={{ textDecoration: 'none' }}>
                                 <Button 
                                     className='btn-finalizar-volver'
                                     variant="contained" 
@@ -101,7 +101,7 @@ function ItemDetail({producto}) {
                     compraRealizada ? (null) : (
 
                         <div className='btn-finalizar'>
-                            <Link to='/' style={{ textDecoration: 'none' }}>
+                            <Link to='/items' style={{ textDecoration: 'none' }}>
                                 <Button 
                                     onClick={()=>{
                                         setCompraRealizada(!compraRealizada);
