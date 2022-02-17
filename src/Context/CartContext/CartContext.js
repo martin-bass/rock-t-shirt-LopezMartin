@@ -3,9 +3,13 @@ import React, {createContext, useState} from "react";
 //Axios
 import axios from 'axios';
 
- export const ProductosSeleccionados = createContext();
+//FIREBASE - FIRESOTRE
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from '../../firebase/firebaseConfig/firebaseConfig';
 
- export const ProdSeleccionadosProvider = ({children}) => {
+export const ProductosSeleccionados = createContext();
+
+export const ProdSeleccionadosProvider = ({children}) => {
 
     // -----------------------------Lógica count-----------------------------------------
     const stock= 9;
@@ -35,9 +39,15 @@ import axios from 'axios';
     const [products, setProducts] = useState ([]);
     const [isLoading, setIsloading] = useState (true);
 
-    const cargarProductosTotales = () => {
-        axios ('https://fakestoreapi.com/products')
-        .then((response) => {setProducts(response.data)})
+
+    const cargarProductosTotales = async () => {
+        const q = query (collection(db, "remeras"));
+        const docs = [];
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc)=> {
+            docs.push({...doc.data(), id: doc.id})
+        });
+        setProducts(docs);
     };
 
     //---------------------------Lógica eliminar card---------------------------------------

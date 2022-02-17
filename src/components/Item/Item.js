@@ -19,15 +19,15 @@ function Item({producto}) {
                 <CardMedia
                     className='CardMedia-item'
                     component="img"
-                    image={producto.image}
+                    image={producto.img}
                     alt="Paella dish"
                 />
                 <CardContent className='CardContent-item'>
                     <Typography gutterBottom variant="h6" component="div">
-                        {producto.title}
+                        {producto.articulo}
                     </Typography>
                     <Typography variant="body1" color="text.primary">
-                        Precio: $ {producto.price}
+                        Precio: $ {producto.precio}
                     </Typography>
                 </CardContent>
             </CardActionArea>
