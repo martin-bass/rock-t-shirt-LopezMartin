@@ -42,9 +42,9 @@ function ItemDetail({producto}) {
         } else {
         prodsDelCarrito.push({
             id:producto.id, 
-            articulo: producto.title,
-            foto: producto.image, 
-            precio: producto.price, 
+            articulo: producto.articulo,
+            foto: producto.img, 
+            precio: producto.precio, 
             cantidad: initial,
             agregado:true
         });
@@ -61,7 +61,7 @@ function ItemDetail({producto}) {
                         className='CardMedia-detail'
                         component="img"
                         image= {producto.img}
-                        alt="Paella dish"
+                        alt="IMAGEN-REMERA"
                     />
             </div>
             <div className='card-info-detail'>

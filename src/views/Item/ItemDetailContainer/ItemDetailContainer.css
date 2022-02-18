@@ -1,9 +1,7 @@
 .ItemDetailContainer{
     background-color: #E7EBF0;
     height: 100vh;
-    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
 }

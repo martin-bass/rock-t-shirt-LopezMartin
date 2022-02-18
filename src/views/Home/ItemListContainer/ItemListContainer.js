@@ -17,11 +17,12 @@ function ItemListContainer() {
 
   useEffect (()=> {
     cargarProductosTotales();
-    setTimeout (()=>{setIsloading(false)},1000);
+    setTimeout (()=>{setIsloading(false)},2000);
+    
   },[]);
   
   return (
-    <div className='ItemListContainer'>
+    <div className={isLoading ? ('temListContainer-spinner'):('ItemListContainer')}>
         {
           isLoading ? (<Spinner />) : (
             products.map ((product) => {

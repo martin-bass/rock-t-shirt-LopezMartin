@@ -17,7 +17,7 @@ function Cart() {
   
 
   return (
-    <>
+    <div className='Cart-container'>
       {
         cartEmpty ? (<CartEmpty />) : (
 
@@ -37,7 +37,7 @@ function Cart() {
       </div>
         )
       }
-    </>   
+    </div>   
   )
 };
 

@@ -33,21 +33,23 @@ function CartItem({prodComprado}) {
         <div className='CartItem'>
                <Card className='CartItem-content'>
                    <CardActionArea className='CartItem-area'>
-                       <CardMedia
-                       className='CartItem-img'
-                       component="img"
-                       image={prodComprado.foto}
-                       alt="CartItem-img"
-                       />
+                       <div className='CartItem-img-container'>
+                            <CardMedia
+                            className='CartItem-img'
+                            component="img"
+                            image={prodComprado.foto}
+                            alt="CartItem-img"
+                            />
+                       </div>
                        <CardContent className='CardContent-cartItem'>
                            <Typography className='titulo-cart-item' gutterBottom variant="h5" component="div">
                                {prodComprado.articulo}
                            </Typography>
                            <Typography className='cantidad-cart-item' variant="body2" color="text.secondary">
-                               <h6>Cantidad Seleccionada:</h6><p>{prodComprado.cantidad} unidad(es)</p>
+                               <h6>Cantidad Seleccionada:</h6><text>{prodComprado.cantidad} unidad(es)</text>
                            </Typography>
                            <Typography className='precio-cart-item' variant="body2" color="text.secondary">
-                               <h6>Precio:</h6><p>${prodComprado.precio}</p> 
+                               <h6>Precio:</h6><text>${prodComprado.precio}</text> 
                            </Typography>
                        </CardContent>
                        <HighlightOffIcon 
