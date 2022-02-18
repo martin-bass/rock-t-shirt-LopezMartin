@@ -1,7 +1,7 @@
 .card-detail{
     display: flex;
     flex-direction: row;
-    width: 800px;
+    width: 800px !important;
     margin-top: 80px;
 }
 
@@ -9,14 +9,18 @@
     margin-left: 40px;
 }
 
-.CardMedia-detail {
-    width: 100% !important;
-    margin: 20px;
+.card-img-detail{
+    width: 470px;
+    height: 500px;
+    margin: 10px;
+    overflow: hidden;
 }
 
-.card-img-detail{
-    width: 400px;
-    margin: 10px;
+.CardMedia-detail {
+    position: relative;
+    width: 390px !important;
+    right: 15px;
+       
 }
 
 .card-info-detail{
