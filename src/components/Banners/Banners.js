@@ -3,10 +3,6 @@ import React from 'react';
 //Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-//Components
-import Carrousel from '../Carrousel/Carrousel';
-
 //Estilos
 import './Banners.css';
 
@@ -19,8 +15,7 @@ import banner4 from '../../img/Banners/Banner4.jpeg';
 
 function Banners() {
   return (
-    <div className='ItemListContainer-wrap'>
-      <Carrousel />
+    <div className='Banners'>
       <div className='Banners-superior'>
           <div className='Banner-1'>
             <div className="card text-white">

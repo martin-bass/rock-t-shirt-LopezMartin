@@ -41,8 +41,7 @@ function ItemDetailContainer() {
       });
     }
     cargarProducto();
-    console.log(item)
-    setIsloading1(false)
+    setIsloading1(false);
   }, []);
 
   return (

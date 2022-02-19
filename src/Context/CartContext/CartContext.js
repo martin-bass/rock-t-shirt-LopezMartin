@@ -57,26 +57,29 @@ export const ProdSeleccionadosProvider = ({children}) => {
     const [prodsDelCarrito, setProdsDelCarrito] = useState ([]);
     const [cartEmpty, setCartEmpty] = useState (true); 
 
-    // -------------------------------------------------------------------------------------
+    // -------------------Variables y funciones para elContext----------------------------
+
+    const contextValues = {
+        prodsDelCarrito: prodsDelCarrito,
+        setProdsDelCarrito: setProdsDelCarrito,
+        cartEmpty: cartEmpty,
+        setCartEmpty: setCartEmpty,
+        products: products,
+        isLoading: isLoading,
+        setIsloading: setIsloading,
+        cargarProductosTotales: cargarProductosTotales,
+        stock: stock, 
+        initial: initial,
+        setInitial: setInitial,
+        aumentarProducto: aumentarProducto,
+        decrementarProducto: decrementarProducto,
+        onAdd: onAdd,
+        compraRealizada: compraRealizada,
+        setCompraRealizada: setCompraRealizada
+    };
+    
     return (
-        <ProductosSeleccionados.Provider value={{ 
-            prodsDelCarrito,
-            setProdsDelCarrito,
-            cartEmpty,
-            setCartEmpty,
-            products,
-            isLoading,
-            setIsloading,
-            cargarProductosTotales,
-            stock, 
-            initial,
-            setInitial,
-            aumentarProducto,
-            decrementarProducto,
-            onAdd,
-            compraRealizada,
-            setCompraRealizada,
-            }}>
+        <ProductosSeleccionados.Provider value={contextValues}>
             {children}
         </ProductosSeleccionados.Provider>
     )  

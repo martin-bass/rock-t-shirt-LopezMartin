@@ -2,11 +2,11 @@ import React, { useEffect, useContext} from 'react';
 import { Link } from 'react-router-dom';
 
 //Context
-import { ProductosSeleccionados } from '../../../Context/CartContext/CartContext';
+import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 
 //Components
-import Item from '../../../components/Item/Item';
-import Spinner from '../../../components/Spinner/Spinner';
+import Item from '../Item/Item.js';
+import Spinner from '../Spinner/Spinner.js';
 
 //Estilos
 import './ItemListContainer.css'
