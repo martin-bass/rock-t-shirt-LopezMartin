@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, CardActions, CardMedia, Button } from '@mui/material';
+import { CardActionArea, CardActions, CardMedia, Button, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
@@ -65,7 +65,7 @@ function ItemDetail({producto}) {
                     />
             </div>
             <div className='card-info-detail'>
-                <CardActionArea>
+                <CardActionArea className='CardActionArea-detail'>
                     <CardContent className='CardContent-detail'>
                         <Typography className='titulo' gutterBottom variant="h5" component="div">
                             {producto.articulo}
@@ -77,11 +77,41 @@ function ItemDetail({producto}) {
                             Precio: ${producto.precio}
                         </Typography>
                     </CardContent>
+                    
                 </CardActionArea>
                 <CardActions className='btn-card-container-detail'>
                 {
                     compraRealizada ? (
                     <div className='btn-counts-container'>
+                        <div className='talle-color'>
+                            <FormControl className='form-talle'>
+                                <InputLabel id="demo-simple-select-label">Talle</InputLabel>
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        value=''
+                                        label="Age"
+                                        onChange=''
+                                    >
+                                        <MenuItem value="S">S</MenuItem>
+                                        <MenuItem value="M">M</MenuItem>
+                                        <MenuItem value="L">L</MenuItem>
+                                    </Select>
+                            </FormControl>
+                            <FormControl className='form-color'>
+                                <InputLabel id="demo-simple-select-label">Color</InputLabel>
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        value=''
+                                        label="Age"
+                                        onChange=''
+                                    >
+                                        <MenuItem value="Negro">Negro</MenuItem>
+                                        <MenuItem value="Blanco">Blanco</MenuItem>
+                                    </Select>
+                            </FormControl>
+                        </div>
                         <ItemCount />
                         <Link to='/items' style={{ textDecoration: 'none' }}>
                                 <Button 

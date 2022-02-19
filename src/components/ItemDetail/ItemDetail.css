@@ -1,12 +1,18 @@
 .card-detail{
     display: flex;
     flex-direction: row;
-    width: 800px !important;
+    width: 800px;
+    height: 570px;
     margin-top: 80px;
 }
 
+.CardActionArea-detail{
+    height: 300px;
+    padding: 10px;
+}
+
 .CardContent-detail{
-    margin-left: 40px;
+    margin-bottom: 50px;
 }
 
 .card-img-detail{
@@ -20,12 +26,16 @@
     position: relative;
     width: 390px !important;
     right: 15px;
-       
+    
 }
 
 .card-info-detail{
     width: 500px;
-    margin: 15px;
+    margin: 5px;
+}
+
+.titulo{
+    font-size: 30px;
 }
 
 .descripcion-detail {
@@ -44,9 +54,30 @@
     font-size: 22px !important;
 }
 
+.talle-color{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.form-talle{
+    width: 100px;
+    margin-left: 10px;
+}
+
+.form-color{
+    width: 100px;
+    margin-left: 20px !important;
+}
+
 .btn-card-container-detail{
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
 
 .btn-finalizar {
@@ -55,8 +86,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 140px;
-    margin-left: 20px;
+    margin-top: 100px;
 }
 
 .btn-finalizar-seleccion {
@@ -73,7 +103,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
 }
 
 .btn-finalizar-volver{
