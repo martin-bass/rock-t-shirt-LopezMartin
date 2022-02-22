@@ -1,18 +1,12 @@
 .card-detail{
     display: flex;
     flex-direction: row;
-    width: 800px;
-    height: 570px;
+    width: 800px; 
     margin-top: 80px;
 }
 
 .CardActionArea-detail{
-    height: 300px;
-    padding: 10px;
-}
-
-.CardContent-detail{
-    margin-bottom: 50px;
+    height: 250px;
 }
 
 .card-img-detail{
@@ -20,6 +14,7 @@
     height: 500px;
     margin: 10px;
     overflow: hidden;
+    border-radius: 5%;
 }
 
 .CardMedia-detail {
@@ -64,7 +59,7 @@
     padding: 10px;
 }
 
-.form-talle{
+.form-talle {
     width: 100px;
     margin-left: 10px;
 }
@@ -102,7 +97,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center
 }
 
 .btn-finalizar-volver{

@@ -2,53 +2,42 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 
 //FIREBASE - FIRESOTRE
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, documentId } from "firebase/firestore";
 import { db } from '../../../../src/firebase/firebaseConfig/firebaseConfig';
 
 //Components
 import ItemDetail from '../../../components/ItemDetail/ItemDetail';
 import Spinner from '../../../components/Spinner/Spinner';
 
-
 //Estilos
 import './ItemDetailContainer.css';
 
-//Axios
-import axios from 'axios';
 
 function ItemDetailContainer() {
   const [item, SetItem] = useState ({});
-  let itemID= useParams();
+  let {id} = useParams();
   
-  
-  const [isLoading1, setIsloading1] = useState (true);
+  const [isLoadingItem, setIsLoadingItem] = useState (false);
 
-  // useEffect (()=> {
-  //   axios (`https://fakestoreapi.com/products/${itemID.id}`)
-  //   .then((response) => {SetItem(response.data)});
-  //   setTimeout (()=>{setIsloading1(false);},1000);
-  // },[itemID]);
-  
   useEffect(() => {
     const cargarProducto = async () => {
-      const querySnapshot = await getDocs(collection(db, "remeras"));
-      querySnapshot.forEach((doc) => {
-      
-      const item = {...doc.data(), id: doc.id};
-      if(item.id===itemID.id){
-        SetItem(item);
-      }
-      });
-    }
-    cargarProducto();
-    setIsloading1(false);
-  }, []);
+      const q = query (collection(db, "remeras"), where(documentId(),"==", id));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((prod)=> {
+              SetItem({...prod.data(), id: prod.id});
+          });
+    };
+    cargarProducto(); 
+    setIsLoadingItem(true);
+  }, [id]);
 
   return (
     <div className='ItemDetailContainer'>
       {
-        isLoading1 ? (<Spinner />) :
-        (<ItemDetail key={itemID.id} producto={item}/>)
+        isLoadingItem ?  
+        (<ItemDetail key={item.id} producto={item}/>)
+        :
+        (<Spinner />)
       }
     </div>
   );

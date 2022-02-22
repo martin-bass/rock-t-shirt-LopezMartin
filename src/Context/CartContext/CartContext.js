@@ -1,8 +1,5 @@
 import React, {createContext, useState} from "react";
 
-//Axios
-import axios from 'axios';
-
 //FIREBASE - FIRESOTRE
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from '../../firebase/firebaseConfig/firebaseConfig';

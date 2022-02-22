@@ -46,10 +46,10 @@ function CartItem({prodComprado}) {
                                {prodComprado.articulo}
                            </Typography>
                            <Typography className='cantidad-cart-item' variant="body2" color="text.secondary">
-                               <h6>Cantidad Seleccionada:</h6><text>{prodComprado.cantidad} unidad(es)</text>
+                               <p>Cantidad Seleccionada:</p><text>{prodComprado.cantidad} unidad(es)</text>
                            </Typography>
                            <Typography className='precio-cart-item' variant="body2" color="text.secondary">
-                               <h6>Precio:</h6><text>${prodComprado.precio}</text> 
+                               <p>Precio:</p><text>${prodComprado.precio}</text> 
                            </Typography>
                        </CardContent>
                        <HighlightOffIcon 

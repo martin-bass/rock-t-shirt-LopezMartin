@@ -2,6 +2,7 @@
     width: 500px;
     height: 210px ;
     margin: 10px ;
+    border-radius: 5%
     
 }
 .CartItem:hover{
@@ -22,12 +23,13 @@
     height: 170px;
     margin: 10px;
     overflow: hidden;
+    border-radius: 5%
 }
 
 .CartItem-img {
     position: relative;
     bottom: 20px;
-    width: 100%;
+    width: 100%
 }
 
 .CardContent-cartItem{
@@ -41,9 +43,10 @@
     font-size: 18px !important;
 }
 
-.cantidad-cart-item > h6,
-.precio-cart-item > h6 {
-    margin-top: px !important;
+
+
+.cantidad-cart-item > p,
+.precio-cart-item > p {
     font-weight: bolder !important;
 }
 
@@ -53,6 +56,7 @@
 
 
 .HighlightOffIcon {
-    margin-bottom: 200px !important;
+    margin-bottom: 200px;
+    margin-left: 10px;
 }
 

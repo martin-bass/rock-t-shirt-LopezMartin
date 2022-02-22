@@ -13,7 +13,6 @@ import './NavBar.css';
 
 //Components
 import CartWidget from '../../components/CartWidget/CartWidget';
-import ItemList from '../../views/Category/ItemList/ItemList';
 
 function NavBar() {
     return (
