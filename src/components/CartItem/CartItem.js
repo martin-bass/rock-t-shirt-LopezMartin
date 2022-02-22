@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import { Link } from 'react-router-dom';
 
 //Context
 import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
@@ -10,6 +11,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import EditIcon from '@mui/icons-material/Edit';
 
 //Estilos
 import './CartItem.css';
@@ -52,12 +54,22 @@ function CartItem({prodComprado}) {
                                <p>Precio:</p><text>${prodComprado.precio}</text> 
                            </Typography>
                        </CardContent>
-                       <HighlightOffIcon 
-                           onClick={()=>{
-                               eliminarCard(prodComprado.id)
-                           }}
-                           className='HighlightOffIcon'
-                       />
+                       <div className='btn-edit-close-container'>
+                            <HighlightOffIcon 
+                                onClick={()=>{
+                                    eliminarCard(prodComprado.id)
+                                }}
+                                className='HighlightOffIcon'
+                            />
+                            <Link to={`/items/item/${prodComprado.id}`} key={prodComprado.id} style={{ textDecoration: 'none' }}>
+                                <EditIcon 
+                                    className='EditIcon'
+                                    onClick={()=>{
+                                        eliminarCard(prodComprado.id)
+                                    }}
+                                />
+                            </Link>
+                       </div>
                    </CardActionArea>
                </Card>
            </div> 

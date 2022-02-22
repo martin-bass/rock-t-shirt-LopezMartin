@@ -28,12 +28,12 @@ function NavBar() {
                             PRODUCTOS
                         </li>
                     </Link>
-                    <Link className="nav-link" to='/category/2' style={{ textDecoration: 'none' }}>
+                    <Link className="nav-link" to='/category/Men' style={{ textDecoration: 'none' }}>
                         <li className="nav-item">
                             MEN
                         </li>
                     </Link>
-                    <Link className="nav-link" to='/category/3' style={{ textDecoration: 'none' }}>
+                    <Link className="nav-link" to='/category/Women' style={{ textDecoration: 'none' }}>
                         <li className="nav-item">
                             WOMEN
                         </li>
@@ -41,13 +41,57 @@ function NavBar() {
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">ARTIST</a>
                         <ul className="dropdown-menu">
-                            <li><a className="dropdown-item" href="#">AC/DC</a></li>
-                            <li><a className="dropdown-item" href="#">Metallica</a></li>
-                            <li><a className="dropdown-item" href="#">Led Zeppelin</a></li>
-                            <li><a className="dropdown-item" href="#">Foo Fighters</a></li>
+                            <Link className="dropdown-item" to='/artist/acdc' style={{ textDecoration: 'none' }}>
+                                <li>AC/DC</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Black Sabbath' style={{ textDecoration: 'none' }}>
+                                <li>Black Sabbath</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Foo Fighters' style={{ textDecoration: 'none' }}>
+                                <li>Foo Fighters</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Guns N Roses' style={{ textDecoration: 'none' }}>
+                                <li>Guns N Roses</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Iron Maiden' style={{ textDecoration: 'none' }}>
+                                <li>Iron Maiden</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Kiss' style={{ textDecoration: 'none' }}>
+                                <li>Kiss</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Led Zeppelin' style={{ textDecoration: 'none' }}>
+                                <li>Led Zeppelin</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/metallica' style={{ textDecoration: 'none' }}>
+                                <li>Metallica</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Motorhead' style={{ textDecoration: 'none' }}>
+                                <li>Motorhead</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Nirvana' style={{ textDecoration: 'none' }}>
+                                <li>Nirvana</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Pink Floyd' style={{ textDecoration: 'none' }}>
+                                <li>Pink Floyd</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Queen' style={{ textDecoration: 'none' }}>
+                                <li>Queen</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Ramones' style={{ textDecoration: 'none' }}>
+                                <li>Ramones</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Red Hot Chili Peppers' style={{ textDecoration: 'none' }}>
+                                <li>Red Hot Chili Peppers</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Beatles' style={{ textDecoration: 'none' }}>
+                                <li>The Beatles</li>
+                            </Link>
+                            <Link className="dropdown-item" to='/artist/Rolling Stones' style={{ textDecoration: 'none' }}>
+                                <li>The Rolling Stones</li>
+                            </Link>   
                         </ul>
                     </li>
-                    <Link className="nav-link" to='/category/1' style={{ textDecoration: 'none' }}>
+                    <Link className="nav-link" to='/' style={{ textDecoration: 'none' }}>
                         <li className="nav-item">
                             STORES
                         </li>

@@ -17,9 +17,8 @@ function ItemListContainer() {
 
   useEffect (()=> {
     cargarProductosTotales();
-    setTimeout (()=>{setIsloading(false)},2000);
-    
-  },[]);
+    setIsloading(false);
+    },[]);
   
   return (
     <div className={isLoading ? ('temListContainer-spinner'):('ItemListContainer')}>

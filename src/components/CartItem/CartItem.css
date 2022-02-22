@@ -54,9 +54,27 @@
     margin-top: 10px !important;
 }
 
+.btn-edit-close-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.EditIcon{
+    margin-left: 10px;
+    margin-top: 152px;
+    color: #000;
+}
 
 .HighlightOffIcon {
-    margin-bottom: 200px;
     margin-left: 10px;
 }
+
+.EditIcon:hover,
+.HighlightOffIcon:hover {
+    color: #DF3D1D;;
+}
+
 

@@ -1,7 +1,7 @@
 import React, {createContext, useState} from "react";
 
 //FIREBASE - FIRESOTRE
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, getDocs } from "firebase/firestore";
 import { db } from '../../firebase/firebaseConfig/firebaseConfig';
 
 export const ProductosSeleccionados = createContext();
@@ -9,7 +9,7 @@ export const ProductosSeleccionados = createContext();
 export const ProdSeleccionadosProvider = ({children}) => {
 
     // -----------------------------Lógica count-----------------------------------------
-    const stock= 9;
+    const [stock, setStock]= useState(0)
     const [initial, setInitial] = useState (1);
     const [compraRealizada, setCompraRealizada] = useState (false);
 
@@ -65,7 +65,8 @@ export const ProdSeleccionadosProvider = ({children}) => {
         isLoading: isLoading,
         setIsloading: setIsloading,
         cargarProductosTotales: cargarProductosTotales,
-        stock: stock, 
+        stock: stock,
+        setStock: setStock, 
         initial: initial,
         setInitial: setInitial,
         aumentarProducto: aumentarProducto,
