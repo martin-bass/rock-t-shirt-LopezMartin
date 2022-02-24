@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom';
 
 //FIREBASE - FIRESOTRE
 import { collection, query, where, getDocs, documentId } from "firebase/firestore";
-import { db } from '../../../../src/firebase/firebaseConfig/firebaseConfig';
+import { db } from '../../../src/firebase/firebaseConfig/firebaseConfig';
 
 //Components
-import ItemDetail from '../../../components/ItemDetail/ItemDetail';
-import Spinner from '../../../components/Spinner/Spinner';
+import ItemDetail from '../../../src/components/ItemDetail/ItemDetail';
+import Spinner from '../../../src/components/Spinner/Spinner';
 
 //Estilos
 import './ItemDetailContainer.css';

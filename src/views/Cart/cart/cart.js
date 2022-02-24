@@ -3,7 +3,7 @@ import React, { useEffect, useContext} from 'react';
 //Components
 import CartItem from '../../../components/CartItem/CartItem';
 import CartEmpty from '../CartEmpty/CartEmpty';
-import SumaFinal from '../../../components/SumaFinal/SumaFinal'
+import CheckOut from '../../../components/CheckOut/CheckOut'
 
 //Context
 import { ProductosSeleccionados } from '../../../Context/CartContext/CartContext';
@@ -32,7 +32,7 @@ function Cart() {
           }
           </div>
           <div className='SumaFinal-container'>
-            <SumaFinal />
+            <CheckOut />
           </div>
       </div>
         )

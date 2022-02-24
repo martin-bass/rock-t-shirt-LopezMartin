@@ -12,9 +12,9 @@ import Typography from '@mui/material/Typography';
 import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 
 //Estilos
-import './SumaFinal.css'
+import './CheckOut.css'
 
-function SumaFinal() {
+function CheckOut() {
     const {prodsDelCarrito, setCartEmpty,setProdsDelCarrito} = useContext (ProductosSeleccionados);
 
     const totalDeProdcutos = () => {
@@ -33,7 +33,7 @@ function SumaFinal() {
 
 
     return (
-        <div className='SumaFinal'>
+        <div className='CheckOut'>
             <Card >
                 <CardContent>
                     <Typography  color="text.secondary">
@@ -68,4 +68,4 @@ function SumaFinal() {
     )
 }
 
-export default SumaFinal;
+export default CheckOut;

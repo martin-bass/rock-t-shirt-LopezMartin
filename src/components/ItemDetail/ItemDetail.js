@@ -28,7 +28,7 @@ function ItemDetail({producto}) {
     }, []) 
 
     const agregarProducto = (prodID) => {
-        //Buscamos el prodcuto en el array para ver si hay diplicados
+        //Buscamos el prodcuto en el array para ver si hay duplicados
         const buscarProducto = prodsDelCarrito.find((prod) => {
             return prod.id === prodID});
         
