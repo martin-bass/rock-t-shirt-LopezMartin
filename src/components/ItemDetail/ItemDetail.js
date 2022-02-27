@@ -151,7 +151,7 @@ function ItemDetail({producto}) {
                                         setCompraRealizada(!compraRealizada);
                                         agregarProducto(producto.id)
                                     }}
-                                    className='btn-finalizar-compra'
+                                    className='btn-finalizar-compra-detail'
                                     variant="contained" 
                                     size="large" 
                                     color="success">
