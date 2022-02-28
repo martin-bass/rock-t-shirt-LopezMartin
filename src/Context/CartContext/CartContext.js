@@ -44,15 +44,21 @@ export const ProdSeleccionadosProvider = ({children}) => {
             docs.push({...doc.data(), id: doc.id})
         });
         setProducts(docs);
-    };
-
-    //---------------------------Lógica eliminar card---------------------------------------
-    
+    };    
 
     // -------------------------------Lógica Cart--------------------------------------------
         //Esta es la variable que actua como carrito de compras. Aqui se guardan nuestros productos
     const [prodsDelCarrito, setProdsDelCarrito] = useState ([]);
     const [cartEmpty, setCartEmpty] = useState (true); 
+    
+    const valorFinal = () => {
+        return prodsDelCarrito.reduce ((acc, value)=> acc + (value.precio*value.cantidad), 0);
+    };
+
+    const [valorFinalCompra, setValorFinalCompra] = useState(valorFinal())
+
+    // -------------------Variables y funciones ID de compra---------------------------
+    const [IDDelPedido, SetIDDelPedido] = useState('');
 
     // -------------------Variables y funciones para elContext----------------------------
 
@@ -73,7 +79,12 @@ export const ProdSeleccionadosProvider = ({children}) => {
         decrementarProducto: decrementarProducto,
         onAdd: onAdd,
         compraRealizada: compraRealizada,
-        setCompraRealizada: setCompraRealizada
+        setCompraRealizada: setCompraRealizada,
+        valorFinalCompra: valorFinalCompra,
+        setValorFinalCompra: setValorFinalCompra,
+        valorFinal: valorFinal,
+        IDDelPedido: IDDelPedido,
+        SetIDDelPedido: SetIDDelPedido
     };
     
     return (

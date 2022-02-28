@@ -13,7 +13,7 @@ import { ProductosSeleccionados } from '../../../Context/CartContext/CartContext
 import './cart.css'
 
 function Cart() {
-  const {prodsDelCarrito, cartEmpty} = useContext (ProductosSeleccionados);
+  const {prodsDelCarrito, cartEmpty, IDDelPedido} = useContext (ProductosSeleccionados);
   
 
   return (
@@ -31,10 +31,10 @@ function Cart() {
             })
           }
           </div>
-          <div className='SumaFinal-container'>
-            <CheckOut />
-          </div>
-      </div>
+            <div className='SumaFinal-container'>
+              <CheckOut />
+            </div>    
+        </div>
         )
       }
     </div>   

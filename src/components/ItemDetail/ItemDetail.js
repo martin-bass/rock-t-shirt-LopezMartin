@@ -42,12 +42,12 @@ function ItemDetail({producto}) {
             alert ("Atencion! Este producto ya está agregado. Sin embargo, sumaremos la cantidad sugerida al mismo item del carrito de compras");
         } else {
         prodsDelCarrito.push({
-            id:producto.id, 
+            id: producto.id, 
             articulo: producto.articulo,
             foto: producto.img, 
             precio: producto.precio, 
             cantidad: initial,
-            agregado:true
+            agregado: true
         });
 
         setProdsDelCarrito(prodsDelCarrito);
@@ -92,7 +92,7 @@ function ItemDetail({producto}) {
                                         id="demo-simple-select"
                                         value=''
                                         label="Age"
-                                        onChange=''
+                                        
                                     >
                                         <MenuItem value="S">S</MenuItem>
                                         <MenuItem value="M">M</MenuItem>
@@ -106,7 +106,7 @@ function ItemDetail({producto}) {
                                         id="demo-simple-select"
                                         value=''
                                         label="Age"
-                                        onChange=''
+                                        
                                     >
                                         <MenuItem value="Negro">Negro</MenuItem>
                                         <MenuItem value="Blanco">Blanco</MenuItem>

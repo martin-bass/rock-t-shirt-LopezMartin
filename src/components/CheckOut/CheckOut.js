@@ -1,5 +1,5 @@
-import React,{useState, useContext} from 'react';
-import { Link } from 'react-router-dom';
+import React,{useState, useEffect, useContext} from 'react';
+
 
 //MUI material
 import Card from '@mui/material/Card';
@@ -8,9 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import { FormControl, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import { RadioGroup, FormControlLabel, Radio } from '@mui/material';
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
@@ -18,6 +16,8 @@ import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 
+//Components
+import Form from '../Form/Form';
 
 //Context
 import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
@@ -26,23 +26,18 @@ import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 import './CheckOut.css'
 
 function CheckOut() {
-    const {prodsDelCarrito, setCartEmpty,setProdsDelCarrito} = useContext (ProductosSeleccionados);
+    const {prodsDelCarrito, valorFinalCompra, setValorFinalCompra, valorFinal} = useContext (ProductosSeleccionados);
 
     const totalDeProdcutos = () => {
         return prodsDelCarrito.reduce ((acc, value)=> acc + value.cantidad, 0)
     };
 
-    const valorFinal = () => {
-        return prodsDelCarrito.reduce ((acc, value)=> acc + (value.precio*value.cantidad), 0)
-    };
+    useEffect(() => {
+        setValorFinalCompra(valorFinal()); 
+    }, [valorFinal]);
+    
 
-    const finalizarCompra = () => {
-        alert("Muchas gracias por su compra!");
-        setProdsDelCarrito([]);
-        setCartEmpty(true);
-        handleClose();
-    };
-
+    //Modal Form
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -52,14 +47,18 @@ function CheckOut() {
     const handleChangePago = (event) => {
         setValuePago(event.target.value);
     };
-
     
     //Checkbox medios envio
-    const [valueEnvio, setValueEnvio] = useState('retiro');
+    const [valueEnvio, setValueEnvio] = useState('retiro');    
     const handleChangeEnvio = (event) => {
         setValueEnvio(event.target.value);
-    };
-
+        if(valueEnvio!="envio"){
+            console.log(valorFinal ()+ 700)
+            setValorFinalCompra (valorFinal ()+ 700);
+        } else {
+            setValorFinalCompra (valorFinal);
+        };    
+    }; 
 
     return (
         <div className='CheckOut'>
@@ -69,7 +68,7 @@ function CheckOut() {
                     Cantidad Total de Productos: {totalDeProdcutos()}
                     </Typography>
                     <Typography variant="h5" component="div">
-                    TOTAL: ${valorFinal()} 
+                    TOTAL: ${valorFinalCompra} 
                     </Typography>
                     <br />
                     <div className='checkbox-formas-de-pago'>
@@ -97,6 +96,7 @@ function CheckOut() {
                             </div> 
                         </RadioGroup>
                         <RadioGroup
+                            id='envio-check'
                             className='envio'
                             aria-labelledby="demo-controlled-radio-buttons-group"
                             name="controlled-radio-buttons-group"
@@ -110,10 +110,9 @@ function CheckOut() {
                                 <StorefrontIcon /><FormControlLabel className='chek-item'  value='retiro' control={<Radio />} label="Retiro por Sucursal" />
                             </div>
                             <div className='chek-item-container'>
-                                <LocalShippingIcon /><FormControlLabel className='chek-item'  value="envio" control={<Radio />} label="Envío a Domicilio" />
+                                <LocalShippingIcon /><FormControlLabel className='chek-item'  value="envio" control={<Radio />} label="Envío a Domicilio ($ 700)" />
                             </div>
                         </RadioGroup>
-
                     </div>
                     <br />
                     <Typography variant="body2">
@@ -124,32 +123,10 @@ function CheckOut() {
                 <div className='modal-form'>
                     <Modal
                         open={open}
-                        onClose={handleClose}
                         aria-labelledby="modal-modal-title"
                         aria-describedby="modal-modal-description"
                     >
-                        <FormControl fullWidth={true}>
-                            <Box className='box-modal'>
-                                <Typography id="modal-modal-title" variant="h6" component="h2">
-                                Completa tus datos
-                                </Typography>
-                                <TextField className='box-modal-textfield' id="outlined-basic" label="Nombre" variant="outlined" />
-                                <TextField className='box-modal-textfield' id="outlined-basic" label="Apellido" variant="outlined" />
-                                <TextField className='box-modal-textfield' id="outlined-basic" label="e-mail" variant="outlined" />
-                                <TextField className='box-modal-textfield' id="outlined-basic" label="Telefono" variant="outlined" />
-                                    <Link to='/items' style={{ textDecoration: 'none' }}> 
-                                        <Button 
-                                            className='btn-finalizar-compra'
-                                            onClick={finalizarCompra}
-                                            variant="contained" 
-                                            size="large" 
-                                            color="success" 
-                                            >
-                                                finalizar compra
-                                        </Button>
-                                    </Link> 
-                            </ Box>
-                        </FormControl>  
+                         <Form handleClose={handleClose}/> 
                     </Modal>
                 </div>
                     <Button

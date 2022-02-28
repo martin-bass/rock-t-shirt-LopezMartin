@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 //Context
@@ -18,12 +18,12 @@ import './CartItem.css';
 
 function CartItem({prodComprado}) {
 
-    const {prodsDelCarrito,setProdsDelCarrito, setCartEmpty} = useContext (ProductosSeleccionados);
+    const {prodsDelCarrito,setProdsDelCarrito, setCartEmpty, valorFinalCompra, setValorFinalCompra, valorFinal} = useContext (ProductosSeleccionados);
 
     const eliminarCard = (IDaEliminar) =>{
         const actualizarProdsComprados = prodsDelCarrito.filter (item => 
             item.id!==IDaEliminar);
-
+        setValorFinalCompra(valorFinal);
         setProdsDelCarrito(actualizarProdsComprados);
         
         if(actualizarProdsComprados.length==0){

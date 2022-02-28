@@ -1,0 +1,45 @@
+.box-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: 'absolute'; 
+    margin: 100px 400px;
+    width: 600px;
+    background-color: #E7EBF0;
+    border-radius: 2%;
+    box-shadow: 24;
+}
+
+.box-modal-textfield{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px !important;
+}
+
+.btn-finalizar-compra{
+    margin-top: 15px !important;
+}
+
+.Alert-compra {
+    margin-top: 10px;
+}
+
+.btn-retornar{
+    margin-top: 10px !important;
+    background-color: #DF3D1D !important;
+}
+
+.btn-retornar:hover {
+    background-color: #ac2f16 !important;
+}
+
+.HighlightOffIcon-form{
+    margin-left: 560px;
+}
+
+.HighlightOffIcon-form:hover{
+    color: #DF3D1D !important;
+    cursor: pointer;
+}
