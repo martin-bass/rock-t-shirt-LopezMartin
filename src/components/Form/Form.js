@@ -31,7 +31,7 @@ function Form ({handleClose})  {
 
     const onChange = (e) =>{
         const {value, name} = e.target;
-        SetValues ({...values, [name]: value, productos: prodsDelCarrito})
+        SetValues ({...values, [name]: value, productos: prodsDelCarrito});
     };
 
     const [errorMessage, setErrorMessage] = useState (false);

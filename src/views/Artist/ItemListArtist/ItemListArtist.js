@@ -15,7 +15,6 @@ import './ItemListArtist.css'
 function ItemListArtist () {
   const [itemsForArtist, setItemsForArtist] = useState ([]);
   const  { artist }  = useParams();
-  console.log(artist);
   
   const [isArtistLoading, setIsArtistLoading] = useState (false);
 

@@ -51,11 +51,6 @@ export const ProdSeleccionadosProvider = ({children}) => {
     const [prodsDelCarrito, setProdsDelCarrito] = useState ([]);
     const [cartEmpty, setCartEmpty] = useState (true); 
     
-    const valorFinal = () => {
-        return prodsDelCarrito.reduce ((acc, value)=> acc + (value.precio*value.cantidad), 0);
-    };
-
-    const [valorFinalCompra, setValorFinalCompra] = useState(valorFinal())
 
     // -------------------Variables y funciones ID de compra---------------------------
     const [IDDelPedido, SetIDDelPedido] = useState('');
@@ -80,9 +75,6 @@ export const ProdSeleccionadosProvider = ({children}) => {
         onAdd: onAdd,
         compraRealizada: compraRealizada,
         setCompraRealizada: setCompraRealizada,
-        valorFinalCompra: valorFinalCompra,
-        setValorFinalCompra: setValorFinalCompra,
-        valorFinal: valorFinal,
         IDDelPedido: IDDelPedido,
         SetIDDelPedido: SetIDDelPedido
     };

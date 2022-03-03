@@ -10,31 +10,8 @@
     margin-right: 80px;
 }
 
-.checkbox-formas-de-pago{
-    display: flex;
-    flex-direction: row;
-}
-
-.tituloMedio-envio{
-    font-weight: bolder !important;
-}
-
 .envio{
     margin-left: 50px;
-}
-
-.chek-item-container{
-    display: flex;
-    flex-direction: row;
-}
-
-.chek-item > span {
-    font-size: 13px !important;
-}
-
-.chek-item-container> svg{
-    margin-top: 8px !important;
-    margin-right: 5px !important;
 }
 
 
