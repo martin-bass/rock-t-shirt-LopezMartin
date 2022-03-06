@@ -11,6 +11,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 //Context
 import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 
+
 //Estilos
 import './ItemCount.css';
 
@@ -48,7 +49,7 @@ function ItemCount() {
                         size="small" 
                         color="primary">
                             Agregar al Carrito
-                        <ShoppingCartIcon style={{ marginLeft: '10px' }}/>
+                        <ShoppingCartIcon style={{ marginLeft: '10px' }}/>   
                     </Button>
                 </div>
             </CardActions>

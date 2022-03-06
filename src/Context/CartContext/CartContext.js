@@ -25,11 +25,12 @@ export const ProdSeleccionadosProvider = ({children}) => {
         };
     };
 
+    const [agregadoMessage, setAgregadoMessage] = useState (false);
     const onAdd = () => {
-        if (stock != 0){
+        if (stock !== 0){
             setInitial(initial);
             setCompraRealizada (!compraRealizada);
-            alert (`Cantidad seleccionada ${initial} unidades!`)
+            setAgregadoMessage(true);
         };        
     };
     //-------------------------------Lógica Cards Inicio-------------------------------------
@@ -37,7 +38,7 @@ export const ProdSeleccionadosProvider = ({children}) => {
     const [isLoading, setIsloading] = useState (true);
 
     const cargarProductosTotales = async () => {
-        const q = query (collection(db, "remeras"));
+        const q = query (collection(db, "REMERAS"));
         const docs = [];
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc)=> {
@@ -76,7 +77,9 @@ export const ProdSeleccionadosProvider = ({children}) => {
         compraRealizada: compraRealizada,
         setCompraRealizada: setCompraRealizada,
         IDDelPedido: IDDelPedido,
-        SetIDDelPedido: SetIDDelPedido
+        SetIDDelPedido: SetIDDelPedido, 
+        agregadoMessage: agregadoMessage,
+        setAgregadoMessage: setAgregadoMessage
     };
     
     return (

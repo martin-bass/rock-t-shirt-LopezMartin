@@ -82,7 +82,7 @@ function RadioButtons({setPrecioEnvio}) {
                             type="radio" 
                             name="flexRadioDefault" 
                             id="flexRadioDefault5"
-                            checked={valueEnvio == "retiro" ? true : false}
+                            checked={valueEnvio === "retiro" ? true : false}
                             onChange={handleChangeEnvio}
                             />
                         <label className="form-check-label" for="flexRadioDefault5">
@@ -97,7 +97,7 @@ function RadioButtons({setPrecioEnvio}) {
                             type="radio" 
                             name="flexRadioDefault" 
                             id="flexRadioDefault6" 
-                            checked={valueEnvio == "envio" ? true : false}
+                            checked={valueEnvio === "envio" ? true : false}
                             onChange={handleChangeEnvio}
                             />
                             <label className="form-check-label" for="flexRadioDefault6">

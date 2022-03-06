@@ -40,7 +40,7 @@ function Form ({handleClose})  {
     const onSubmit = async (e) =>{
         e.preventDefault();
 
-        if (values.Nombre=="" || values.Apellido=="" || values.email=="" || values.Telefono=="") {
+        if (values.Nombre==="" || values.Apellido==="" || values.email==="" || values.Telefono==="") {
             setErrorMessage (true);
             
         } else if (!(/^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(values.email))) {
@@ -82,11 +82,11 @@ function Form ({handleClose})  {
                     }
                     {
                        errorMessage && 
-                        <Alert severity="error">Por favor, completa todos los campos.</Alert>
+                        <Alert className='Alert-error' severity="error">Por favor, completa todos los campos.</Alert>
                     }
                     {
                        errorMailMessage &&
-                       <Alert severity="error">Por favor, introduce un e-mail válido.</Alert>
+                       <Alert className='Alert-error' severity="error">Por favor, introduce un e-mail válido.</Alert>
                     }
                     {
                         IDDelPedido ? (

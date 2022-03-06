@@ -43,3 +43,7 @@
     color: #DF3D1D !important;
     cursor: pointer;
 }
+
+.Alert-error {
+    margin: 5px !important;
+}

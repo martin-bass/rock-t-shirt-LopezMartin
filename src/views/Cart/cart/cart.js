@@ -1,4 +1,4 @@
-import React, { useEffect, useContext} from 'react';
+import React,  {useContext} from 'react';
 
 //Components
 import CartItem from '../../../components/CartItem/CartItem';
@@ -13,7 +13,7 @@ import { ProductosSeleccionados } from '../../../Context/CartContext/CartContext
 import './cart.css'
 
 function Cart() {
-  const {prodsDelCarrito, cartEmpty, IDDelPedido} = useContext (ProductosSeleccionados);
+  const {prodsDelCarrito, cartEmpty} = useContext (ProductosSeleccionados);
   
 
   return (

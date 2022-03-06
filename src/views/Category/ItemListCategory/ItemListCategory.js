@@ -20,7 +20,7 @@ function ItemListCategory () {
 
   useEffect(() => {
     const cargarCategoria = async () => {
-      const q = query (collection(db, "remeras"), where("categoria","==", category));
+      const q = query (collection(db, "REMERAS"), where("categoria","==", category));
       const docs= [];
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((prod)=> {

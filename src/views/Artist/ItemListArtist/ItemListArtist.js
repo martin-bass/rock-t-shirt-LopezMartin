@@ -20,7 +20,7 @@ function ItemListArtist () {
 
   useEffect(() => {
     const cargarArtista = async () => {
-        const q = query (collection(db, "remeras"), where("artista","==", artist));
+        const q = query (collection(db, "REMERAS"), where("artista","==", artist));
         const docs= [];
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((prod)=> {

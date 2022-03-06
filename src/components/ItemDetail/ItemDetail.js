@@ -1,16 +1,17 @@
-import React, {useEffect, useContext} from 'react';
+import React, {useEffect, useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 
 // MUI material
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, CardActions, CardMedia, Button, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import { CardActionArea, CardActions, CardMedia, Button, FormControl, InputLabel, Select, MenuItem, Alert } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 //Components
 import ItemCount from '../ItemCount/ItemCount';
+
 
 //Context
 import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
@@ -19,20 +20,22 @@ import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 import './ItemDetail.css'
 
 function ItemDetail({producto}) {
-    const {compraRealizada, setCompraRealizada, initial, setInitial, setStock,prodsDelCarrito, setProdsDelCarrito, setCartEmpty} = useContext (ProductosSeleccionados);
+    const {compraRealizada, setCompraRealizada, initial, setInitial, setStock,prodsDelCarrito, setProdsDelCarrito, setCartEmpty, agregadoMessage, setAgregadoMessage} = useContext (ProductosSeleccionados);
 
-    useEffect(() => {
+    useEffect(async () => {
+        await
         setInitial (1);
         setStock (producto.stock);
         setCompraRealizada(true);
+        setColorRemera(colorRemera)
     }, []) 
 
     const agregarProducto = (prodID) => {
         //Buscamos el prodcuto en el array para ver si hay duplicados
         const buscarProducto = prodsDelCarrito.find((prod) => {
-            return prod.id === prodID});
+            return prod.id === prodID });
         
-        //Momentaneamente, si hay duplicado, se avisa mediante alert y se suma la nueva cantidad. De lo contrario, se agrega como un producto nuevo.
+        
         if (buscarProducto) {
             prodsDelCarrito.map ((index) => {
                 if (index.id===prodID) {
@@ -47,14 +50,29 @@ function ItemDetail({producto}) {
             foto: producto.img, 
             precio: producto.precio, 
             cantidad: initial,
-            agregado: true
+            agregado: true,
+            color: colorRemera,
+            talle: talleRemera
         });
 
         setProdsDelCarrito(prodsDelCarrito);
         setCartEmpty(false);
         };
+        console.log (prodsDelCarrito);
     };
 
+    //selector de color 
+    const [colorRemera, setColorRemera] = useState ('Negro');
+    const handleChangeColor = (e) => {
+        setColorRemera(e.target.value)
+    }
+
+    //selector de talle 
+    const [talleRemera, setTalleRemera] = useState ('S');
+    const handleChangeTalle = (e) => {
+        setTalleRemera(e.target.value)
+    }
+    
     return (
         <Card className='card-detail'>
             <div className='card-img-detail'>
@@ -75,7 +93,7 @@ function ItemDetail({producto}) {
                             <p>Descripción del Producto:</p>{producto.articulo}
                         </Typography>
                         <Typography className='precio-detail' variant="body1" color="text.primary">
-                            Precio: ${producto.precio}
+                            Precio: ${producto.precio} 
                         </Typography>
                     </CardContent>
                     
@@ -90,8 +108,8 @@ function ItemDetail({producto}) {
                                     <Select
                                         labelId="demo-simple-select-label"
                                         id="demo-simple-select"
-                                        value=''
-                                        label="Age"
+                                        value={talleRemera}
+                                        onChange={handleChangeTalle}
                                         
                                     >
                                         <MenuItem value="S">S</MenuItem>
@@ -104,12 +122,11 @@ function ItemDetail({producto}) {
                                     <Select
                                         labelId="demo-simple-select-label"
                                         id="demo-simple-select"
-                                        value=''
-                                        label="Age"
-                                        
+                                        value={colorRemera}
+                                        onChange={handleChangeColor}
                                     >
-                                        <MenuItem value="Negro">Negro</MenuItem>
-                                        <MenuItem value="Blanco">Blanco</MenuItem>
+                                    <MenuItem value="Negro">Negro</MenuItem>
+                                    <MenuItem value="Blanco">Blanco</MenuItem>    
                                     </Select>
                             </FormControl>
                         </div>
@@ -127,6 +144,10 @@ function ItemDetail({producto}) {
                     
                     ) : (null)
                 }
+                {
+                    agregadoMessage &&
+                    <Alert className='Alert-error' severity="success">Producto agregado al carrito</Alert>
+                } 
                 </CardActions>
                 {
                     compraRealizada ? (null) : (
@@ -136,7 +157,8 @@ function ItemDetail({producto}) {
                                 <Button 
                                     onClick={()=>{
                                         setCompraRealizada(!compraRealizada);
-                                        agregarProducto(producto.id)
+                                        agregarProducto(producto.id);
+                                        setAgregadoMessage(false)
                                     }}
                                     className='btn-finalizar-seleccion'
                                     variant="contained" 
@@ -149,7 +171,8 @@ function ItemDetail({producto}) {
                                 <Button 
                                     onClick={()=>{
                                         setCompraRealizada(!compraRealizada);
-                                        agregarProducto(producto.id)
+                                        agregarProducto(producto.id);
+                                        setAgregadoMessage(false)
                                     }}
                                     className='btn-finalizar-compra-detail'
                                     variant="contained" 
@@ -161,7 +184,7 @@ function ItemDetail({producto}) {
                             </Link>
                         </div>
                     )
-                }     
+                }    
             </div>
         </Card>
     );
