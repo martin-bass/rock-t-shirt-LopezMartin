@@ -1,3 +1,7 @@
+.Form-disabled{
+    margin-top: 100px !important;
+}
+
 .box-modal{
     display: flex;
     flex-direction: column;
@@ -5,11 +9,12 @@
     justify-content: center;
     padding: 20px;
     position: 'absolute'; 
-    margin: 100px 400px;
+    margin: 20px 400px;
     width: 600px;
     background-color: #E7EBF0;
     border-radius: 2%;
     box-shadow: 24;
+    overflow-y: scroll;
 }
 
 .box-modal-textfield{

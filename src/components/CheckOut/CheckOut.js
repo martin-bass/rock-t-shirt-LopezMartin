@@ -39,8 +39,11 @@ function CheckOut() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    //Esta variable habilita una clase que "acomoda" el css una vez que se presenta el ID de compra
+    const [classDisabled, setClassDisabled] = useState (false);
+
     return (
-        <div className='CheckOut'>
+        <div className={classDisabled ? ('CheckOut-disabled'):('CheckOut')}>
             <Card >
                 <CardContent>
                     <Typography  color="text.secondary">
@@ -65,7 +68,12 @@ function CheckOut() {
                         aria-labelledby="modal-modal-title"
                         aria-describedby="modal-modal-description"
                     >
-                         <Form handleClose={handleClose}/> 
+                         <Form 
+                         handleClose={handleClose} 
+                         setClassDisabled={setClassDisabled}
+                         classDisabled={classDisabled}
+                         valorFinal={valorFinal}
+                         /> 
                     </Modal>
                 </div>
                     <Button

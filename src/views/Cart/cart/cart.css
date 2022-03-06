@@ -4,13 +4,13 @@
     height: auto;
 }
 
-/* .CartList-container {
+.CartList-container {
     background-color: #E7EBF0;
     width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr;
     margin-top: 50px;
-} */
+}
 
 .CartList-container {
     background-color: #E7EBF0;

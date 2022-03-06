@@ -22,20 +22,32 @@ const initialState = {
     Telefono : ''
 }
 
-function Form ({handleClose})  {
+function Form ({handleClose, classDisabled, setClassDisabled, valorFinal})  {
 
     const { setCartEmpty, prodsDelCarrito, setProdsDelCarrito, IDDelPedido, SetIDDelPedido } = useContext (ProductosSeleccionados);
 
     const [values, SetValues] = useState (initialState);
     
-
     const onChange = (e) =>{
         const {value, name} = e.target;
-        SetValues ({...values, [name]: value, productos: prodsDelCarrito});
+        //const {articulo, id, precio} = prodsDelCarrito;
+        const f = new Date();
+        const fecha= (f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() + "   " + f.getHours() + ":" + f.getMinutes() );
+        
+        SetValues ({
+            ...values, 
+            [name]: value, 
+            ...prodsDelCarrito,
+            // [articulo]: prodsDelCarrito,
+            total: valorFinal(),
+            fecha: fecha
+        });
     };
 
     const [errorMessage, setErrorMessage] = useState (false);
     const [errorMailMessage, setErrorMailMessage] = useState (false);
+    const [errorMailRepetido, setErrorMailRepetido] = useState (false);
+    
 
     const onSubmit = async (e) =>{
         e.preventDefault();
@@ -45,12 +57,17 @@ function Form ({handleClose})  {
             
         } else if (!(/^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(values.email))) {
             setErrorMailMessage (true);
+        
+        } else if (values.email !== values.email2) {
+            setErrorMailRepetido (true);
         } else {
             const docRef = await addDoc(collection(db, "pedidos"), {
                 values
               });
               setErrorMessage (false);
               setErrorMailMessage (false);
+              setErrorMailRepetido (false);
+              setClassDisabled (true);
               SetIDDelPedido (docRef.id)
               SetValues(initialState); 
               setProdsDelCarrito([]); 
@@ -65,7 +82,7 @@ function Form ({handleClose})  {
     
 
     return (
-        <form className='Form'>
+        <form className={classDisabled ? ('Form-disabled'):('Form')}>
             <FormControl fullWidth={true}>
                 <Box className='box-modal'>
                     {
@@ -87,6 +104,10 @@ function Form ({handleClose})  {
                     {
                        errorMailMessage &&
                        <Alert className='Alert-error' severity="error">Por favor, introduce un e-mail válido.</Alert>
+                    }
+                    {
+                       errorMailRepetido &&
+                       <Alert className='Alert-error' severity="error">Los mails no coinciden.</Alert>
                     }
                     {
                         IDDelPedido ? (
@@ -129,6 +150,14 @@ function Form ({handleClose})  {
                                     variant="outlined" 
                                     name="email"
                                     value={values.email}
+                                    onChange={onChange}/>
+                                <TextField 
+                                    className='box-modal-textfield' 
+                                    id="outlined-basic" 
+                                    label="Repite tu e-mail" 
+                                    variant="outlined" 
+                                    name="email2"
+                                    value={values.email2}
                                     onChange={onChange}/>
                                 <TextField 
                                     type="number"

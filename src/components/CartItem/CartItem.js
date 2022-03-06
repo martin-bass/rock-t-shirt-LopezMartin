@@ -20,7 +20,6 @@ function CartItem({prodComprado}) {
 
     const {prodsDelCarrito,setProdsDelCarrito, setCartEmpty} = useContext (ProductosSeleccionados);
 
-
     const eliminarCard = (IDaEliminar) =>{
         const actualizarProdsComprados = prodsDelCarrito.filter (item => 
             item.id!==IDaEliminar);
@@ -48,10 +47,10 @@ function CartItem({prodComprado}) {
                                {prodComprado.articulo}
                            </Typography>
                            <Typography className='cantidad-cart-item' variant="body2" color="text.secondary">
-                               <p>Cantidad Seleccionada:</p><text>{prodComprado.cantidad} unidad(es)</text>
+                               <strong>Cantidad Seleccionada:</strong> <p>{prodComprado.cantidad} unidad(es)</p>
                            </Typography>
                            <Typography className='precio-cart-item' variant="body2" color="text.secondary">
-                               <p>Precio:</p><text>${prodComprado.precio}</text> 
+                               <strong>Precio:</strong> <p>${prodComprado.precio}</p> 
                            </Typography>
                        </CardContent>
                        <div className='btn-edit-close-container'>

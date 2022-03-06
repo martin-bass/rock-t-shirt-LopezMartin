@@ -22,8 +22,7 @@ import './ItemDetail.css'
 function ItemDetail({producto}) {
     const {compraRealizada, setCompraRealizada, initial, setInitial, setStock,prodsDelCarrito, setProdsDelCarrito, setCartEmpty, agregadoMessage, setAgregadoMessage} = useContext (ProductosSeleccionados);
 
-    useEffect(async () => {
-        await
+    useEffect(() => {
         setInitial (1);
         setStock (producto.stock);
         setCompraRealizada(true);
@@ -58,7 +57,6 @@ function ItemDetail({producto}) {
         setProdsDelCarrito(prodsDelCarrito);
         setCartEmpty(false);
         };
-        console.log (prodsDelCarrito);
     };
 
     //selector de color 

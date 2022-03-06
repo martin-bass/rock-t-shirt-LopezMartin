@@ -10,6 +10,14 @@
     margin-right: 80px;
 }
 
+.CheckOut:hover{
+    box-shadow: 2px 2px 5px #000;
+}
+
+.CheckOut-disabled{
+    visibility: hidden !important;
+}
+
 .envio{
     margin-left: 50px;
 }

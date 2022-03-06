@@ -43,11 +43,14 @@
     font-size: 18px !important;
 }
 
-
+.cantidad-cart-item,
+.precio-cart-item {
+    margin-top: 35px;
+}
 
 .cantidad-cart-item > p,
 .precio-cart-item > p {
-    font-weight: bolder !important;
+    display: inline;
 }
 
 .precio-cart-item{

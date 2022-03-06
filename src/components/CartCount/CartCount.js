@@ -9,7 +9,7 @@ import './CartCount.css';
 
 function CartCount() {
 
-    const {prodsDelCarrito,cartEmpty, compraRealizada} = useContext (ProductosSeleccionados);
+    const {prodsDelCarrito,cartEmpty} = useContext (ProductosSeleccionados);
 
     const totalDeProdcutos = () => {
         return prodsDelCarrito.reduce ((acc, value)=> acc + value.cantidad, 0)
