@@ -129,6 +129,14 @@
     }
 }
 
+@media (max-width:500px) {
+    .Banners-superior,
+    .Banners-inferior {
+        width: 100% !important;
+        flex-direction: column;
+    }
+}
+
 @media (max-width:412px) {
     .Banners-superior,
     .Banners-inferior {

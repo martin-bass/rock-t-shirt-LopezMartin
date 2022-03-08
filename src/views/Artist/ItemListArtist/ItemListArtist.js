@@ -33,7 +33,7 @@ function ItemListArtist () {
   }, [artist]);
 
   return (
-    <div className='ItemList'>
+    <div className='ItemListArtist'>
       {
           isArtistLoading ? (
             itemsForArtist.map ((product) => {

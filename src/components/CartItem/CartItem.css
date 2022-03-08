@@ -80,4 +80,16 @@
     color: #DF3D1D;;
 }
 
+@media (max-width: 820px) {
+    .CartItem {
+        width: 400px;
+        height: 200px 
+    }
+}
 
+@media (max-width: 768px) {
+    .CartItem {
+        width: 350px;
+        height: 200px 
+    }
+}

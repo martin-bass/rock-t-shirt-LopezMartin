@@ -81,7 +81,7 @@
     }
 
     .footer-clean .item.social {
-        margin-left: 80px;
+        margin-left: 480px;
     }
 }
 
@@ -91,14 +91,21 @@
     }
 }
 
-
 @media (max-width: 768px) {
-    
+    .footer-clean .item.social {
+        margin-left:450px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-clean .item.social {
+        margin-left:220px;
+    }
 }
 
 @media (max-width: 412px) {
     .footer-clean .item.social {
-        margin-left: 110px;
+        margin-left: 140px;
     }
 }
 

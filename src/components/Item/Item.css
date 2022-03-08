@@ -36,3 +36,9 @@
 .btn-agregar-item:hover {
     background-color: #DF3D1D !important;
 }
+
+@media (max-width: 991px) {
+    .btn-agregar-item {
+        margin-top: 40px !important;
+    }
+}

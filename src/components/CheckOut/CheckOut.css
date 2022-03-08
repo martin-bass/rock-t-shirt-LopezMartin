@@ -32,3 +32,21 @@
 .form-group{
     background-color: #fff;
 }
+
+@media (max-width: 991px) {
+    .CheckOut{
+        margin-top: 0px;
+        width: 400px !important;
+    }
+}
+
+@media (max-width: 820px) {
+    .CheckOut{
+        margin-top: 0px;
+        width: 340px !important;
+    }
+
+    .envio{
+        margin-left: 0px;
+    }
+}

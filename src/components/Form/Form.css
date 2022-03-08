@@ -52,3 +52,59 @@
 .Alert-error {
     margin: 5px !important;
 }
+
+@media (max-width: 991px) {
+    .box-modal{
+        margin-top: 100px;
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 820px) {
+    .box-modal{
+        margin-top: 100px;
+        margin-left: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .box-modal{
+        margin-top: 50px;
+        margin-left: 110px;
+    }
+}
+
+@media (max-width: 500px) {
+    .box-modal{
+        width: 450px;
+        margin-top: 50px;
+        margin-left: 15px;
+    }
+
+    .HighlightOffIcon-form{
+        margin-left: 390px;
+    }
+}
+
+@media (max-width: 412px) {
+    .box-modal{
+        width: 380px;
+        margin-top: 50px;
+        margin-left: 15px;
+    }
+
+    .HighlightOffIcon-form{
+        margin-left: 350px;
+    }
+}
+
+@media (max-width: 390px) {
+    .box-modal{
+        width: 350px;
+        margin-top: 50px;
+    }
+
+    .HighlightOffIcon-form{
+        margin-left: 300px;
+    }
+}

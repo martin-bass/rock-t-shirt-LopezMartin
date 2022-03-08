@@ -107,8 +107,7 @@ function ItemDetail({producto}) {
                                         labelId="demo-simple-select-label"
                                         id="demo-simple-select"
                                         value={talleRemera}
-                                        onChange={handleChangeTalle}
-                                        
+                                        onChange={handleChangeTalle}    
                                     >
                                         <MenuItem value="S">S</MenuItem>
                                         <MenuItem value="M">M</MenuItem>

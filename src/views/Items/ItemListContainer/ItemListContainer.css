@@ -19,7 +19,7 @@
 @media (max-width: 820px) {
     .ItemListContainer{
         grid-template-columns: repeat(4, 1fr);
-        margin-top: 100px;
+        margin-top: 64px;
     }
 }
 
@@ -30,10 +30,17 @@
     }
 }
 
+@media (max-width: 500px) {
+    .ItemListContainer{
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 65px;
+    }
+}
+
 @media (max-width: 412px) {
     .ItemListContainer{
         grid-template-columns: repeat(2, 1fr);
-        margin-top: 100px;
+        margin-top: 65px;
     }
 }
 
