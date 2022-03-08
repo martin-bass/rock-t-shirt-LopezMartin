@@ -1,7 +1,7 @@
 .Cart-container{
     background-color: #E7EBF0;
     width: 100%;
-    height: auto;
+    height: auto !important;
 }
 
 .CartList-container {
@@ -10,6 +10,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     margin-top: 50px;
+    height: auto;
 }
 
 .CartList-container {

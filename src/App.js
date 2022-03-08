@@ -12,6 +12,8 @@ import Home from './views/Home/Home';
 import ItemListArtist from './views/Artist/ItemListArtist/ItemListArtist';
 import { ProdSeleccionadosProvider } from './Context/CartContext/CartContext';
 
+//import './App.css';
+
 function App() {
   return (
     <ProdSeleccionadosProvider>
