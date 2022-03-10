@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/dist/dropdown.js';
 
+//MUI
+import MenuIcon from '@mui/icons-material/Menu';
+
 //Logo
 import logo_mano from '../../img/Logo/logo_mano.png';
 
@@ -97,6 +100,26 @@ function NavBar() {
                         </li>
                     </Link>
                 </ul>
+                <div className='btn-responsive-menu'>
+                    <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false"><MenuIcon/></a>
+                        <ul className="dropdown-menu">
+                        <Link className="dropdown-item" to='/items' style={{ textDecoration: 'none' }}>
+                            <li className="nav-item">
+                                PRODUCTOS
+                            </li>
+                        </Link>
+                        <Link className="dropdown-item" to='/category/Men' style={{ textDecoration: 'none' }}>
+                            <li className="nav-item">
+                                MEN
+                            </li>
+                        </Link>
+                        <Link className="dropdown-item" to='/category/Women' style={{ textDecoration: 'none' }}>
+                            <li className="nav-item">
+                                WOMEN
+                            </li>
+                        </Link>
+                        </ul>    
+                </div>
                 <Link to='/cart' style={{ textDecoration: 'none' }}>
                     <CartWidget/>
                 </Link>

@@ -93,3 +93,10 @@
         height: 200px 
     }
 }
+
+@media (max-width: 500px) {
+    .CartItem {
+        width: 350px;
+        height: 220px 
+    }
+}

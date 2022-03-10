@@ -47,6 +47,10 @@
     border: none;
 }
 
+.btn-responsive-menu{
+    display: none;
+}
+
 .dropdown-item{
     color: #000;
 }
@@ -109,6 +113,11 @@
         display: none;
     }
 
+    .btn-responsive-menu{
+        display: flex;
+        margin-left: 350px;
+    }
+
     .nav-item{
         font-size: 14px;
         padding-left: 20px;
@@ -135,6 +144,11 @@
 
     .navbar-nav{
         display: none;
+    }
+
+    .btn-responsive-menu{
+        display: flex;
+        margin-left: 150px;
     }
 
     .nav-item{
@@ -168,6 +182,11 @@
         display: none;
     }
 
+    .btn-responsive-menu{
+        display: flex;
+        margin-left: 60px;
+    }
+
     .nav-item{
         font-size: 7px;
         padding-left: 20px;
@@ -177,6 +196,11 @@
 @media (max-width:390px) {
     .navbar {
         width: 390px
+    }
+
+    .btn-responsive-menu{
+        display: flex;
+        margin-left: 10px;
     }
 }
 

@@ -50,6 +50,12 @@ function CartItem({prodComprado}) {
                                <strong>Cantidad Seleccionada:</strong> <p>{prodComprado.cantidad} unidad(es)</p>
                            </Typography>
                            <Typography className='precio-cart-item' variant="body2" color="text.secondary">
+                               <strong>Talle:</strong> <p>{prodComprado.talle}</p> 
+                           </Typography>
+                           <Typography className='precio-cart-item' variant="body2" color="text.secondary">
+                               <strong>Color:</strong> <p>{prodComprado.color}</p> 
+                           </Typography>
+                           <Typography className='precio-cart-item' variant="body2" color="text.secondary">
                                <strong>Precio:</strong> <p>${prodComprado.precio}</p> 
                            </Typography>
                        </CardContent>

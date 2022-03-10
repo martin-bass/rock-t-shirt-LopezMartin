@@ -8,6 +8,11 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions, CardMedia, Button, FormControl, InputLabel, Select, MenuItem, Alert } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Skeleton from '@mui/material/Skeleton';
+
+
+//SweetAlert
+import Swal from 'sweetalert2'
 
 //Components
 import ItemCount from '../ItemCount/ItemCount';
@@ -20,7 +25,7 @@ import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 import './ItemDetail.css'
 
 function ItemDetail({producto}) {
-    const {compraRealizada, setCompraRealizada, initial, setInitial, setStock,prodsDelCarrito, setProdsDelCarrito, setCartEmpty, agregadoMessage, setAgregadoMessage} = useContext (ProductosSeleccionados);
+    const {compraRealizada, setCompraRealizada, initial, setInitial, setStock,prodsDelCarrito, setProdsDelCarrito, setCartEmpty, agregadoMessage, setAgregadoMessage, isLoading} = useContext (ProductosSeleccionados);
 
     useEffect(() => {
         setInitial (1);
@@ -41,7 +46,14 @@ function ItemDetail({producto}) {
                     index.cantidad= index.cantidad + initial;
                 };
             });
-            alert ("Atencion! Este producto ya está agregado. Sin embargo, sumaremos la cantidad sugerida al mismo item del carrito de compras");
+            Swal.fire({
+                icon: 'error',
+                title: '<h2 class="p-sweetAlert">Atención!</h2>',
+                html: '<p class="p-sweetAlert">Este producto ya está agregado. Sin embargo, sumaremos la cantidad sugerida al mismo item del carrito de compras.</p>',
+                background: '#E7EBF0',
+                position:'center',
+                allowOutsideClick: false
+            });
         } else {
         prodsDelCarrito.push({
             id: producto.id, 
@@ -53,7 +65,7 @@ function ItemDetail({producto}) {
             color: colorRemera,
             talle: talleRemera
         });
-
+        console.log(prodsDelCarrito);
         setProdsDelCarrito(prodsDelCarrito);
         setCartEmpty(false);
         };
@@ -74,12 +86,16 @@ function ItemDetail({producto}) {
     return (
         <Card className='card-detail'>
             <div className='card-img-detail'>
-                <CardMedia
-                        className='CardMedia-detail'
-                        component="img"
-                        image= {producto.img}
-                        alt="IMAGEN-REMERA"
-                    />
+            {
+                isLoading ? (<Skeleton variant="rectangular" width={390} height={500} />)
+                :
+                (<CardMedia
+                    className='CardMedia-detail'
+                    component="img"
+                    image= {producto.img}
+                    alt="IMAGEN-REMERA"
+                />)
+            }
             </div>
             <div className='card-info-detail'>
                 <CardActionArea className='CardActionArea-detail'>
@@ -123,7 +139,7 @@ function ItemDetail({producto}) {
                                         onChange={handleChangeColor}
                                     >
                                     <MenuItem value="Negro">Negro</MenuItem>
-                                    <MenuItem value="Blanco">Blanco</MenuItem>    
+                                    <MenuItem value="Blanco">Blanco</MenuItem>      
                                     </Select>
                             </FormControl>
                         </div>

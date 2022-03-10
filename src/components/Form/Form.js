@@ -27,20 +27,28 @@ function Form ({handleClose, classDisabled, setClassDisabled, valorFinal})  {
     const { setCartEmpty, prodsDelCarrito, setProdsDelCarrito, IDDelPedido, SetIDDelPedido } = useContext (ProductosSeleccionados);
 
     const [values, SetValues] = useState (initialState);
-    
+
+    const carrito = [];
+    prodsDelCarrito.forEach(element => {
+        const productoComprado = {
+            ID: element.id, 
+            Articulo: element.articulo, 
+            Cantidad: element.cantidad, 
+            Precio: element.precio};
+        carrito.push(productoComprado);
+    });
+       
     const onChange = (e) =>{
         const {value, name} = e.target;
-        //const {articulo, id, precio} = prodsDelCarrito;
         const f = new Date();
         const fecha= (f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() + "   " + f.getHours() + ":" + f.getMinutes() );
         
         SetValues ({
             ...values, 
             [name]: value, 
-            ...prodsDelCarrito,
-            // [articulo]: prodsDelCarrito,
-            total: valorFinal(),
-            fecha: fecha
+            Productos : carrito,
+            Total: valorFinal(),
+            Fecha: fecha
         });
     };
 
