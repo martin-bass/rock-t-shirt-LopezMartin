@@ -1,11 +1,14 @@
 # Proyecto Final Curso React.JS - CoderHouse
 
-Este proyecto se encuentra en desarrollo. Se trata de una tienda E-commerce de remeras de bandas de rock. A los fines prácticos (y hasta ampliar conocimiento) se estan levantando prodcutos de una [API externa](https://fakestoreapi.com/products).
+Este es mi Proyecto Final para el curso de React JS de CoderHouse. Se trata de una tienda E-commerce de remeras de bandas de rock.
 
-Más Adelante se utilizaran los prodcutos "reales" para el proyecto. Las dependencias fueron las vistas en clase (axion, boostrap, react-router-dom, mui-material).
+La navegavilidad de este sitio permite entrar a una página principal:
 
-La aplicacion permite, presentar todos los productos en un ItemListContainer. Al hacer click sobre cada card se podrá acceder al detalle del prodcuto. Donde se podrá modificar la cantidad a comprar.
+La opcion de filtrar los prodcutos por categoría, eligiendo entre Men, Women y un filtro por artista (por ejemplo, si se selecciona la opcion "Queen" son mostraron las remreras de esa banda tanto para hombre como para mujer):
 
-Las categorias de los productos estan en base a la API de prueba (electronica, joyeria, etc). Pero a futuro serán categorias especificas del e-commerce a desarrollar.
+Finalmente, una vez confirmada la compra, se accede a un CheckOut, donde seleccionamos el medio de pago, podemos adicionar el gasto de envio (esto modifica el precio final en tiempo real) y, finalmente, accedemos al formulario de envío para obtener el codigo de compra:
 
-El proyecto continua en desarrollo.
+
+
+
+La BBDD esta alojada en Firestore. Además, se utilizaron librerias de codigo abierto para el desarrollo de esta aplicación como lo son Bootstrap y MUI Material. También se acude a SweetAlert2 para generar un determinado Alert.

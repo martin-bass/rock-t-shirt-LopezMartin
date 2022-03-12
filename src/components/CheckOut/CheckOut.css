@@ -29,6 +29,14 @@
    align-items: center;
 }
 
+.btn-eliminar-carrito{
+    background-color: #DF3D1D !important;
+}
+
+.btn-eliminar-carrito:hover{
+    background-color: #ac2f16 !important;
+}
+
 .form-group{
     background-color: #fff;
 }
@@ -44,6 +52,14 @@
     .CheckOut{
         margin-top: 0px;
         width: 340px !important;
+    }
+
+    .btn-finalizar-compra-container {
+        flex-direction: column;
+    }
+
+    .btn-eliminar-carrito {
+        margin-top: 5px !important;
     }
 
     .envio{

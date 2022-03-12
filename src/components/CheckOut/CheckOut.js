@@ -8,6 +8,9 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 //Components
 import Form from '../Form/Form';
@@ -20,7 +23,7 @@ import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 import './CheckOut.css'
 
 function CheckOut() {
-    const {prodsDelCarrito} = useContext (ProductosSeleccionados);
+    const {prodsDelCarrito, setProdsDelCarrito, setCartEmpty} = useContext (ProductosSeleccionados);
     
     const totalDeProdcutos = () => {
         return prodsDelCarrito.reduce ((acc, value)=> acc + value.cantidad, 0)
@@ -41,6 +44,11 @@ function CheckOut() {
 
     //Esta variable habilita una clase que "acomoda" el css una vez que se presenta el ID de compra
     const [classDisabled, setClassDisabled] = useState (false);
+
+    const vaciarCarrito = () => {
+        setProdsDelCarrito ([]);
+        setCartEmpty (true);
+    }
 
     return (
         <div className={classDisabled ? ('CheckOut-disabled'):('CheckOut')}>
@@ -84,6 +92,17 @@ function CheckOut() {
                     onClick={handleOpen}
                     >
                         Confirmar Compra
+                    <ShoppingCartIcon style={{ marginLeft: '10px' }}/>
+                    </Button>
+                    <Button
+                    className='btn-eliminar-carrito'
+                    variant="contained" 
+                    size="large" 
+                    color="success" 
+                    onClick={vaciarCarrito}
+                    >
+                        Vaciar carrito
+                    <DeleteIcon style={{ marginLeft: '10px' }}/>
                     </Button>
                 </CardActions>
             </Card>

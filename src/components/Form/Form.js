@@ -88,7 +88,6 @@ function Form ({handleClose, classDisabled, setClassDisabled, valorFinal})  {
         setProdsDelCarrito([]); 
     };
     
-
     return (
         <form className={classDisabled ? ('Form-disabled'):('Form')}>
             <FormControl fullWidth={true}>
@@ -195,8 +194,7 @@ function Form ({handleClose, classDisabled, setClassDisabled, valorFinal})  {
                             </Button>
                         </Link> 
                        )
-                    }
-                    
+                    }           
                     {
                         IDDelPedido && (
                         <>

@@ -42,7 +42,7 @@ function NavBar() {
                         </li>
                     </Link>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">ARTIST</a>
+                        <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown"  role="button" aria-expanded="false">ARTIST</a>
                         <ul className="dropdown-menu">
                             <Link className="dropdown-item" to='/artist/acdc' style={{ textDecoration: 'none' }}>
                                 <li>AC/DC</li>
@@ -102,19 +102,19 @@ function NavBar() {
                 </ul>
                 <div className='btn-responsive-menu'>
                     <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false"><MenuIcon/></a>
-                        <ul className="dropdown-menu">
+                        <ul className="dropdown-menu dropdown-responsive">
                         <Link className="dropdown-item" to='/items' style={{ textDecoration: 'none' }}>
-                            <li className="nav-item">
+                            <li className="nav-item nav-item-resposive">
                                 PRODUCTOS
                             </li>
                         </Link>
                         <Link className="dropdown-item" to='/category/Men' style={{ textDecoration: 'none' }}>
-                            <li className="nav-item">
+                            <li className="nav-item nav-item-resposive">
                                 MEN
                             </li>
                         </Link>
                         <Link className="dropdown-item" to='/category/Women' style={{ textDecoration: 'none' }}>
-                            <li className="nav-item">
+                            <li className="nav-item nav-item-resposive">
                                 WOMEN
                             </li>
                         </Link>

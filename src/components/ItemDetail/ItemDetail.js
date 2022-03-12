@@ -65,7 +65,6 @@ function ItemDetail({producto}) {
             color: colorRemera,
             talle: talleRemera
         });
-        console.log(prodsDelCarrito);
         setProdsDelCarrito(prodsDelCarrito);
         setCartEmpty(false);
         };
