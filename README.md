@@ -3,6 +3,8 @@
 Este es mi Proyecto Final para el curso de React JS de CoderHouse. Se trata de una tienda E-commerce de remeras de bandas de rock.
 
 La navegavilidad de este sitio permite entrar a una página principal:
+![screencapture-localhost-3000-2022-03-11-21_09_52](https://user-images.githubusercontent.com/84106998/157994457-b62dc865-91ee-4d18-a746-788f53c2d653.png)
+
 
 La opcion de filtrar los prodcutos por categoría, eligiendo entre Men, Women y un filtro por artista (por ejemplo, si se selecciona la opcion "Queen" son mostraron las remreras de esa banda tanto para hombre como para mujer):
 
