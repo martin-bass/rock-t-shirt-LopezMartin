@@ -32,10 +32,10 @@ function Footer() {
                         </ul>
                     </div>
                     <div className="col-lg-3 item social">
-                        <a href="https://www.instagram.com/" target="_blank" ><i ><InstagramIcon/></i></a>
-                        <a href="https://www.facebook.com/" target="_blank" ><i ><FacebookIcon /></i></a>
-                        <a href="https://www.youtube.com/" target="_blank" ><i ><YouTubeIcon /></i></a>
-                        <a href="https://twitter.com/" target="_blank" ><i ><TwitterIcon /></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" ><i ><InstagramIcon/></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" ><i ><FacebookIcon /></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" ><i ><YouTubeIcon /></i></a>
+                        <a href="https://twitter.com/" target="_blank" rel="noreferrer" ><i ><TwitterIcon /></i></a>
                     </div>
                 </div>
             </div>

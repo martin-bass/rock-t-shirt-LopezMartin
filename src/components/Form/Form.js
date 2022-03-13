@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 //MUI material
 import { FormControl, TextField, Box, Typography, Button, Alert } from '@mui/material';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 //FIREBASE - FIRESOTRE
 import { collection, addDoc } from "firebase/firestore";
@@ -41,7 +44,7 @@ function Form ({handleClose, classDisabled, setClassDisabled, valorFinal})  {
     const onChange = (e) =>{
         const {value, name} = e.target;
         const f = new Date();
-        const fecha= (f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() + "   " + f.getHours() + ":" + f.getMinutes() );
+        const fecha = (f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() + "   " + f.getHours() + ":" + f.getMinutes() );
         
         SetValues ({
             ...values, 
@@ -55,30 +58,39 @@ function Form ({handleClose, classDisabled, setClassDisabled, valorFinal})  {
     const [errorMessage, setErrorMessage] = useState (false);
     const [errorMailMessage, setErrorMailMessage] = useState (false);
     const [errorMailRepetido, setErrorMailRepetido] = useState (false);
+
+    //Cerrar Alerts
+    const [openErrorMessage, setOpenErrorMessage] = useState(true);
+    const [openMailMessage, setOpenMailMessage] = useState(true);
+    const [openMailRepetido, setOpenMailRepetido] = useState(true);
     
 
     const onSubmit = async (e) =>{
         e.preventDefault();
-
+        setOpenErrorMessage(true);
+        setOpenMailMessage(true);
+        setOpenMailRepetido(true);
         if (values.Nombre==="" || values.Apellido==="" || values.email==="" || values.Telefono==="") {
             setErrorMessage (true);
             
         } else if (!(/^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(values.email))) {
             setErrorMailMessage (true);
-        
+            setOpenErrorMessage(false);
         } else if (values.email !== values.email2) {
             setErrorMailRepetido (true);
+            setOpenErrorMessage(false);
+            setOpenMailMessage(false);
         } else {
             const docRef = await addDoc(collection(db, "pedidos"), {
                 values
               });
-              setErrorMessage (false);
-              setErrorMailMessage (false);
-              setErrorMailRepetido (false);
-              setClassDisabled (true);
-              SetIDDelPedido (docRef.id)
-              SetValues(initialState); 
-              setProdsDelCarrito([]); 
+                setErrorMessage (false);
+                setErrorMailMessage (false);
+                setErrorMailRepetido (false);
+                setClassDisabled (true);
+                SetIDDelPedido (docRef.id)
+                SetValues(initialState); 
+                setProdsDelCarrito([]); 
         };        
     };
 
@@ -106,15 +118,64 @@ function Form ({handleClose, classDisabled, setClassDisabled, valorFinal})  {
                     }
                     {
                        errorMessage && 
-                        <Alert className='Alert-error' severity="error">Por favor, completa todos los campos.</Alert>
+                       <Collapse in={openErrorMessage}>
+                        <Alert 
+                            action={
+                                <IconButton
+                                  aria-label="close"
+                                  color="inherit"
+                                  size="small"
+                                  onClick={() => {
+                                    setOpenErrorMessage(false);
+                                  }}
+                                >
+                                    <CloseIcon fontSize="inherit" />
+                                </IconButton>
+                              }  
+                            className='Alert-error' 
+                            severity="error"
+                        >
+                            Por favor, completa todos los campos.</Alert></Collapse>
                     }
                     {
                        errorMailMessage &&
-                       <Alert className='Alert-error' severity="error">Por favor, introduce un e-mail válido.</Alert>
+                       <Collapse in={openMailMessage}>
+                       <Alert 
+                            action={
+                                <IconButton
+                                aria-label="close"
+                                color="inherit"
+                                size="small"
+                                onClick={() => {
+                                    setOpenMailMessage(false);
+                                }}
+                                >
+                                    <CloseIcon fontSize="inherit" />
+                                </IconButton>
+                            } 
+                            className='Alert-error' 
+                            severity="error"
+                        >Por favor, introduce un e-mail válido.</Alert></Collapse>
                     }
                     {
                        errorMailRepetido &&
-                       <Alert className='Alert-error' severity="error">Los mails no coinciden.</Alert>
+                       <Collapse in={openMailRepetido}>
+                       <Alert 
+                            action={
+                                <IconButton
+                                aria-label="close"
+                                color="inherit"
+                                size="small"
+                                onClick={() => {
+                                    setOpenMailRepetido(false);
+                                }}
+                                >
+                                    <CloseIcon fontSize="inherit" />
+                                </IconButton>
+                            } 
+                            className='Alert-error' 
+                            severity="error"
+                        >Los mails no coinciden.</Alert></Collapse>
                     }
                     {
                         IDDelPedido ? (
