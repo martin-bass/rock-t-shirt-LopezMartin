@@ -83,7 +83,7 @@ function Form ({handleClose, classDisabled, setClassDisabled, valorFinal})  {
         } else {
             const docRef = await addDoc(collection(db, "pedidos"), {
                 values
-              });
+            });
                 setErrorMessage (false);
                 setErrorMailMessage (false);
                 setErrorMailRepetido (false);
