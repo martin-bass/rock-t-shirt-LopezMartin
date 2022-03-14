@@ -17,7 +17,7 @@ Finalmente, una vez confirmada la compra, se accede a un CheckOut, donde selecci
 
 La BBDD esta alojada en Firestore. Además, se utilizaron librerias de codigo abierto para el desarrollo de esta aplicación como lo son Bootstrap y MUI Material. También se acude a SweetAlert2 para generar un determinado Alert.
 
-El siguiente GIF ejemplifica rápidamente un ejemplo de compra:
+El siguiente GIF ejemplifica rápidamente una simulación de compra:
 
 ![GIF_ProyectoFinal](https://user-images.githubusercontent.com/84106998/158276372-1ed071e7-93c6-4321-96bc-63efd6f30e25.gif)
 
