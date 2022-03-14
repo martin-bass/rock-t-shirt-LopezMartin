@@ -15,16 +15,9 @@ Una vez que accedemos a la vista de detalle, se puede elegir la cantidad por cad
 Finalmente, una vez confirmada la compra, se accede a un CheckOut, donde seleccionamos el medio de pago, podemos adicionar el gasto de envío (esto modifica el precio final en tiempo real) y, finalmente, accedemos al formulario de envío para obtener el código de compra:
 ![screencapture-localhost-3000-cart-2022-03-11-21_19_13](https://user-images.githubusercontent.com/84106998/157994887-95f06d97-f921-450c-9eb3-3e55c3a0aace.jpeg)
 
-
-<<<<<<< HEAD
-La BBDD está alojada en Firestore. Además, se utilizaron librerías de código abierto para el desarrollo de esta aplicación como lo son Bootstrap y MUI Material. También se acude a SweetAlert2 para generar un determinado Alert.
-=======
-
-
-
 La BBDD esta alojada en Firestore. Además, se utilizaron librerias de codigo abierto para el desarrollo de esta aplicación como lo son Bootstrap y MUI Material. También se acude a SweetAlert2 para generar un determinado Alert.
 
 El siguiente GIF ejemplifica rápidamente un ejemplo de compra:
 
 ![GIF_ProyectoFinal](https://user-images.githubusercontent.com/84106998/158276372-1ed071e7-93c6-4321-96bc-63efd6f30e25.gif)
->>>>>>> 20b3ad7063ba2abdc3ad603263e0c8fecbfb4cad
+
