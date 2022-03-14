@@ -4,8 +4,7 @@
     background-color:#999;
     color:#4b4c4d;
     z-index: 10 !important;
-    
-  }
+}
 
 .container{
     display: grid;

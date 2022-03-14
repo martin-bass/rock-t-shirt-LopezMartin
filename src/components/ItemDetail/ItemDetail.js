@@ -10,13 +10,11 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Skeleton from '@mui/material/Skeleton';
 
-
 //SweetAlert
 import Swal from 'sweetalert2'
 
 //Components
 import ItemCount from '../ItemCount/ItemCount';
-
 
 //Context
 import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
@@ -38,7 +36,6 @@ function ItemDetail({producto}) {
         //Buscamos el prodcuto en el array para ver si hay duplicados
         const buscarProducto = prodsDelCarrito.find((prod) => {
             return prod.id === prodID });
-        
         
         if (buscarProducto) {
             prodsDelCarrito.map ((index) => {

@@ -6,7 +6,6 @@ import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 //Estilos
 import './CartCount.css';
 
-
 function CartCount() {
 
     const {prodsDelCarrito,cartEmpty} = useContext (ProductosSeleccionados);

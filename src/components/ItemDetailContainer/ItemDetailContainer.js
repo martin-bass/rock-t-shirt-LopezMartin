@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 
-
 //FIREBASE - FIRESOTRE
 import { collection, query, where, getDocs, documentId } from "firebase/firestore";
 import { db } from '../../../src/firebase/firebaseConfig/firebaseConfig';

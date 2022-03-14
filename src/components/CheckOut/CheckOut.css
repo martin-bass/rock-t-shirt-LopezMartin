@@ -41,6 +41,12 @@
     background-color: #fff;
 }
 
+@media (max-width: 1366px) {
+    .CheckOut{
+        margin-right: 40px;
+    }
+}
+
 @media (max-width: 991px) {
     .CheckOut{
         margin-top: 0px;
@@ -64,5 +70,14 @@
 
     .envio{
         margin-left: 0px;
+    }
+}
+
+@media (max-width: 500px) {
+    .CheckOut{
+        margin-top: 0px;
+        margin-right: 80px !important;
+        margin-bottom: 40px !important;
+        width: 340px !important;
     }
 }

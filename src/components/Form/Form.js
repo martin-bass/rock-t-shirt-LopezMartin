@@ -55,6 +55,7 @@ function Form ({handleClose, classDisabled, setClassDisabled, valorFinal})  {
         });
     };
 
+    //Alerts
     const [errorMessage, setErrorMessage] = useState (false);
     const [errorMailMessage, setErrorMailMessage] = useState (false);
     const [errorMailRepetido, setErrorMailRepetido] = useState (false);
@@ -84,11 +85,11 @@ function Form ({handleClose, classDisabled, setClassDisabled, valorFinal})  {
             const docRef = await addDoc(collection(db, "pedidos"), {
                 values
             });
+                SetIDDelPedido (docRef.id);
                 setErrorMessage (false);
                 setErrorMailMessage (false);
                 setErrorMailRepetido (false);
                 setClassDisabled (true);
-                SetIDDelPedido (docRef.id)
                 SetValues(initialState); 
                 setProdsDelCarrito([]); 
         };        

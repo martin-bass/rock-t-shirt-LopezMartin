@@ -53,7 +53,7 @@ export const ProdSeleccionadosProvider = ({children}) => {
     const [cartEmpty, setCartEmpty] = useState (true); 
     
 
-    // -------------------Variables y funciones ID de compra---------------------------
+    // -------------------Variables y funciones ID de compra----------------------------------
     const [IDDelPedido, SetIDDelPedido] = useState('');
 
     // -------------------Variables y funciones para elContext----------------------------

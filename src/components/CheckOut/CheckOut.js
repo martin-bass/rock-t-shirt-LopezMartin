@@ -1,6 +1,5 @@
 import React,{useState, useContext} from 'react';
 
-
 //MUI material
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -10,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import DeleteIcon from '@mui/icons-material/Delete';
-
 
 //Components
 import Form from '../Form/Form';
@@ -35,7 +33,6 @@ function CheckOut() {
 
     //Precio del envio - Se suma al saldo final en caso de querer envio a domicilio
     const [precioEnvio, setPrecioEnvio] = useState(0)
-    
     
     //Modal Form
     const [open, setOpen] = useState(false);

@@ -6,7 +6,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 //Estilos
 import './Spinner.css'
 
-
 function Spinner() {
   return (
     <div className='spinner'>

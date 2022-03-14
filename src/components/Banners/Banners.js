@@ -13,7 +13,6 @@ import banner2 from '../../img/Banners/Banner2.jpeg';
 import banner3 from '../../img/Banners/Banner3.jpeg';
 import banner4 from '../../img/Banners/Banner4.jpeg';
 
-
 function Banners() {
   return (
     <div className='Banners'>

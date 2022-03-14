@@ -11,7 +11,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 //Context
 import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 
-
 //Estilos
 import './ItemCount.css';
 
@@ -19,7 +18,6 @@ function ItemCount() {
     
     const {stock, initial, aumentarProducto , decrementarProducto, onAdd } = useContext (ProductosSeleccionados);
     
-
     return (
         <Card>
             <CardActions>

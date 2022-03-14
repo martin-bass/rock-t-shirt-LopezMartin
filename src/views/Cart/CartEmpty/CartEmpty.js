@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-
 //Estilos
 import './CartEmpty.css'
 

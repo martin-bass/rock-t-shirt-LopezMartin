@@ -11,6 +11,7 @@ import Footer from './components/Footer/Footer';
 import Home from './views/Home/Home';
 import ItemListArtist from './views/Artist/ItemListArtist/ItemListArtist';
 import { ProdSeleccionadosProvider } from './Context/CartContext/CartContext';
+import ErrorPage from './views/ErrorPage/ErrorPage';
 
 //import './App.css';
 
@@ -23,10 +24,12 @@ function App() {
             <Routes>
               <Route path='/' element={<Home />}></Route>
               <Route path='/items' element={<ItemListContainer />}></Route>
+              <Route path='/items/*' element={<ErrorPage />}></Route>
               <Route path='items/item/:id' element={<ItemDetailContainer />}></Route>
               <Route path='/category/:category' element={<ItemListCategory />}></Route>
               <Route path='/artist/:artist' element={<ItemListArtist />}></Route>
               <Route path='/cart' element={<Cart />}></Route>
+              <Route path='*' element={<ErrorPage />}></Route>
             </Routes>
           <Footer />
         </div>

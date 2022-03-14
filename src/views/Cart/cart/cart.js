@@ -8,14 +8,12 @@ import CheckOut from '../../../components/CheckOut/CheckOut'
 //Context
 import { ProductosSeleccionados } from '../../../Context/CartContext/CartContext';
 
-
 //Estilos
 import './cart.css'
 
 function Cart() {
   const {prodsDelCarrito, cartEmpty} = useContext (ProductosSeleccionados);
   
-
   return (
     <div className='Cart-container'>
       {
