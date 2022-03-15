@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 
 // MUI material
 import Card from '@mui/material/Card';
@@ -16,7 +16,11 @@ import './Item.css';
 
 function Item({producto}) {
 
-    const {isLoading} = useContext (ProductosSeleccionados);
+    const {isLoading, setIsloading} = useContext (ProductosSeleccionados);
+
+    useEffect (()=> {
+        setIsloading(false);
+        },[]);
     
     return (
         <Card className='card-item' sx={{ maxWidth: 345 }}>

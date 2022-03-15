@@ -71,13 +71,13 @@ function ItemDetail({producto}) {
     const [colorRemera, setColorRemera] = useState ('Negro');
     const handleChangeColor = (e) => {
         setColorRemera(e.target.value)
-    }
+    };
 
     //selector de talle 
     const [talleRemera, setTalleRemera] = useState ('S');
     const handleChangeTalle = (e) => {
         setTalleRemera(e.target.value)
-    }
+    };
     
     return (
         <Card className='card-detail'>

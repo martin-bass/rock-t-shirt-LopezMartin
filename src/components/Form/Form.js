@@ -68,19 +68,19 @@ function Form ({handleClose, classDisabled, setClassDisabled, valorFinal})  {
 
     const onSubmit = async (e) =>{
         e.preventDefault();
-        setOpenErrorMessage(true);
-        setOpenMailMessage(true);
-        setOpenMailRepetido(true);
+        
         if (values.Nombre==="" || values.Apellido==="" || values.email==="" || values.Telefono==="") {
             setErrorMessage (true);
-            
+            setOpenErrorMessage(true);
         } else if (!(/^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(values.email))) {
             setErrorMailMessage (true);
+            setOpenMailMessage(true);
             setOpenErrorMessage(false);
         } else if (values.email !== values.email2) {
             setErrorMailRepetido (true);
             setOpenErrorMessage(false);
             setOpenMailMessage(false);
+            setOpenMailRepetido(true);
         } else {
             const docRef = await addDoc(collection(db, "pedidos"), {
                 values
