@@ -1,58 +1,125 @@
-.navbar{
-    background-color: #DF3D1D;
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    z-index: 10;
+@media (max-width: 1920px) {
+    .navbar{
+        background-color: #DF3D1D;
+        width: 1920px;
+        position: fixed;
+        top: 0px;
+        z-index: 10;
+    }
+    
+    .container{
+        display: flex;
+        width: 100% !important;
+        margin-left: 0;
+    }
+    
+    .navbar-brand{
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    @font-face {
+        font-family: 'Rock It';
+        src: url('/src/fonts/Rockit.ttf');
+    } 
+    
+    .logo {
+        font-family: 'Rock It';
+        font-size: 24px;
+        margin-top: 18px;
+        margin-right: 200px;
+    }
+    
+    .navbar-nav{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-right: 300px;
+    }
+    
+    .nav-item{
+        font-size: 20px;
+        padding-left: 70px;
+    }
+    
+    .nav-link{
+        color: #000 !important;
+    }
+    
+    .dropdown-menu{
+        background-color: #DF3D1D;
+        border: none;
+    }
+    
+    .btn-responsive-menu{
+        display: none;
+    }
+    
+    .dropdown-item{
+        color: #000;
+    } 
 }
 
-.container{
-    display: flex;
-    width: 100% !important;
-}
-
-.navbar-brand{
-    display: flex;
-    align-items: flex-start;
-}
-
-@font-face {
-    font-family: 'Rock It';
-    src: url('/src/fonts/Rockit.ttf');
-} 
-
-.logo {
-    font-family: 'Rock It';
-    font-size: 24px;
-    margin-top: 18px;
-}
-
-.navbar-nav{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
-.nav-item{
-    font-size: 20px;
-    padding-left: 30px;
-}
-
-.nav-link{
-    color: #000 !important;
-}
-
-.dropdown-menu{
-    background-color: #DF3D1D;
-    border: none;
-}
-
-.btn-responsive-menu{
-    display: none;
-}
-
-.dropdown-item{
-    color: #000;
+@media (max-width: 1440px) {
+    .navbar{
+        background-color: #DF3D1D;
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        z-index: 10;
+    }
+    
+    .container{
+        display: flex;
+        width: 100% !important;
+        margin-left: auto;
+    }
+    
+    .navbar-brand{
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    @font-face {
+        font-family: 'Rock It';
+        src: url('/src/fonts/Rockit.ttf');
+    } 
+    
+    .logo {
+        font-family: 'Rock It';
+        font-size: 24px;
+        margin-top: 18px;
+        margin-right: 0;
+    }
+    
+    .navbar-nav{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-right: 0px;
+    }
+    
+    .nav-item{
+        font-size: 20px;
+        padding-left: 30px;
+    }
+    
+    .nav-link{
+        color: #000 !important;
+    }
+    
+    .dropdown-menu{
+        background-color: #DF3D1D;
+        border: none;
+    }
+    
+    .btn-responsive-menu{
+        display: none;
+    }
+    
+    .dropdown-item{
+        color: #000;
+    } 
 }
 
 @media (max-width: 991px) {

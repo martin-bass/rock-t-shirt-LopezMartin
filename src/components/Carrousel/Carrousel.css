@@ -1,23 +1,48 @@
-.carrousel{
-    display:flex;
-    position: relative;
-    width: 100%;
-    height: 710px;
-    overflow-y: hidden;
+@media (max-width: 1920px) {
+    .carrousel{
+        position: relative;
+        width: 100%;
+        height: 1000px;
+        overflow-y: hidden;
+    }
+    
+    .c1 {
+        position: relative;
+        bottom: 150px;
+    }
+    
+    .c2 {
+        position: relative;
+        bottom: 200px;
+    }
+    
+    .c3 {
+        position: relative;
+    } 
 }
 
-.c1 {
-    position: relative;
-    bottom: 150px;
-}
-
-.c2 {
-    position: relative;
-    bottom: 200px;
-}
-
-.c3 {
-    position: relative;
+@media (max-width: 1440px) {
+    .carrousel{
+        display:flex;
+        position: relative;
+        width: 100%;
+        height: 710px;
+        overflow-y: hidden;
+    }
+    
+    .c1 {
+        position: relative;
+        bottom: 150px;
+    }
+    
+    .c2 {
+        position: relative;
+        bottom: 200px;
+    }
+    
+    .c3 {
+        position: relative;
+    } 
 }
 
 @media (max-width: 991px) {

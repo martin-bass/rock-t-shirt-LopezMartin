@@ -26,6 +26,7 @@ export const ProdSeleccionadosProvider = ({children}) => {
     };
 
     const [agregadoMessage, setAgregadoMessage] = useState (false);
+    
     const onAdd = () => {
         if (stock !== 0){
             setInitial(initial);
