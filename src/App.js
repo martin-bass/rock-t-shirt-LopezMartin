@@ -13,7 +13,7 @@ import ItemListArtist from './views/Artist/ItemListArtist/ItemListArtist';
 import { ProdSeleccionadosProvider } from './Context/CartContext/CartContext';
 import ErrorPage from './views/ErrorPage/ErrorPage';
 
-//import './App.css';
+import './App.css';
 
 function App() {
   return (
