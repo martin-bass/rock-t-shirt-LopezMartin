@@ -21,6 +21,7 @@ import { ProductosSeleccionados } from '../../Context/CartContext/CartContext';
 
 //Estilos
 import './ItemDetail.css'
+import { style } from '@mui/system';
 
 function ItemDetail({producto}) {
     const {compraRealizada, setCompraRealizada, initial, setInitial, setStock,prodsDelCarrito, setProdsDelCarrito, setCartEmpty, agregadoMessage, setAgregadoMessage, isLoading, setIsloading} = useContext (ProductosSeleccionados);

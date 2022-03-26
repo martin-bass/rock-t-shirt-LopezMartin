@@ -13,7 +13,7 @@ function Footer() {
   return (
     <div className="footer-clean">
         <footer>
-            <div className="container">
+            <div className="footer-container">
                 <div className="row justify-content-center">
                     <div className="col-sm-4 col-md-3 item">
                         <h3>Nosotros</h3>
